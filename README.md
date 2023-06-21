@@ -1,1 +1,1 @@
-# owlmart
+# OSA Owl-mart project
