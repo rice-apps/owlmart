@@ -14,17 +14,32 @@ To clone OwlMart, create a new directory to store the code, and CD into the dire
 `git clone https://github.com/rice-apps/owlmart.git`
 
 In order to run the backend and frontend correctly, you should start the backend first.
+
 `
 cd server
+`
+
+`
 npm install
+`
+
+`
 npm start
 `
+
 Then, in another terminal window, do the same for the frontend.
 `
-cd client
-npm install
-npm start
+cd client 
 `
+
+`
+npm install
+`
+
+`
+npm start 
+`
+
 Now, you will be able to view the app in your browser under localhost:3001
 
 In the future, you can skil the npm install when starting the app.
