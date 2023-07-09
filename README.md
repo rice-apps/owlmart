@@ -28,6 +28,7 @@ npm start
 `
 
 Then, in another terminal window, do the same for the frontend.
+
 `
 cd client 
 `
