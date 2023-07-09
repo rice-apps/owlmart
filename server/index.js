@@ -11,7 +11,7 @@ const server = new ApolloServer({
   context: ({ req }) => ({ req }),
 });
 
-const PORT = 3000;
+const PORT = 1111;
 
 mongoose
   .connect(MONGODB, { useNewUrlParser: true })
