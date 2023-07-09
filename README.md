@@ -41,8 +41,6 @@ npm install
 npm start 
 `
 
-Now, you will be able to view the app in your browser under localhost:3001
-
 In the future, you can skil the npm install when starting the app.
 
 ## Setting Environment Variables
@@ -63,7 +61,7 @@ We want to keep our code as clean as possible, so it's important to follow these
 -  Make sure there are no warnings in the JavaScript development console
 -  Add comments to your files describing what each function does
 -  When creating a PR, make sure you describe what the PR does, and how a Team Lead should review and test it!
-
+-  Make sure you have [Apollo Client Devtools installed] (https://chrome.google.com/webstore/detail/apollo-client-devtools/jdkknkkbebbapilgoeccciglkfbmbnfm)
 
 
 
