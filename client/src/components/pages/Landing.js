@@ -1,6 +1,5 @@
 import owl from './owl.png';
 import './Landing.css';
-import { Home } from '@material-ui/icons';
 
 function App() {
   return (
@@ -20,7 +19,7 @@ function App() {
             <a href="Cart.js">Cart</a>
           </li>
         </ul>
-        
+
       </nav>
 
       <header className="App-header">
