@@ -1,7 +1,7 @@
 import owl from './owl.png'
 import './Landing.css';
 
-function App() {
+function HomePage() {
   return (
     <div className="App">
       <header className="App-header">
@@ -14,4 +14,4 @@ function App() {
   );
 }
 
-export default App;
+export default HomePage;
