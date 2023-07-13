@@ -6,7 +6,7 @@ import {
   ApolloClient,
 } from '@apollo/client';
 
-import App from './components/pages/Landing';
+import App from './App';
 
 const httpLink = createHttpLink({
   uri: 'http://localhost:1111',
