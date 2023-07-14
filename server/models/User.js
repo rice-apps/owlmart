@@ -11,5 +11,19 @@ const userSchema = new mongoose.Schema({
   college: { type: String, enum: ["Baker", "Jones", "McMurtry", "Will Rice", "Sid Richardson", "Lovett", "Duncan", "Brown", "Martel", "Hanszen", "Weiss"]},
 });
 
+ //Email AND NetID already in database error handling
+userSchema.post('save', function(error, doc, next) {
+    if (error.email === 'MongoServerError' && error.code === 11000) {
+      next(new Error('Email already in use'));
+    } else {
+      next();
+    }
+    if (error.netID === 'MongoServerError' && error.code === 11000) {
+        next(new Error('netID already in use'));
+      } else {
+        next();
+      }
+  });
+
 const User = mongoose.model('User', userSchema);
 module.exports = User;
