@@ -17,7 +17,7 @@ Mutation: {
 
         newUser.email = email
         //password encryption
-        newUser.password = bcrypt.hash(password,10); //saltRounds of 10
+        newUser.password = await bcrypt.hash(password,10); //saltRounds of 10
         
         //Empty NetID error
         if (netID?.trim() === '') {
@@ -27,9 +27,10 @@ Mutation: {
         if(!(email.LowerCase.includes('rice.edu'))) {
             throw new Error('Non-Rice email: invalid registration credentials')
         }
-        //Email already in database error (pending)
+       
 
         const user = await newUser.save();
+            
         return user;
     }
   }

@@ -25,4 +25,18 @@ userSchema.post('save', function(error, doc, next) {
       }
   });
 
+ //Email AND NetID already in database error handling
+userSchema.post('save', function(error, doc, next) {
+    if (error.email === 'MongoServerError' && error.code === 11000) {
+      next(new Error('Email already in use'));
+    } else {
+      next();
+    }
+    if (error.netID === 'MongoServerError' && error.code === 11000) {
+        next(new Error('netID already in use'));
+      } else {
+        next();
+      }
+  });
+
 module.exports =  model('User', userSchema);
