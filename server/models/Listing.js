@@ -2,15 +2,13 @@ const { model, Schema } = require('mongoose');
 const Image = require('./Image.js')
 
 const categories = {
-    clothes: 0,
-    furniture: 1,
-    technology: 2,
-    jewelry: 3,
-    service: 4,
-    other: 5
+    CLOTHES: 0,
+    FURNITURE: 1,
+    TECHNOLOGY: 2,
+    JEWELRY: 3,
+    SERVICE: 4,
+    OTHER: 5
 }
-
-
 
 const listingSchema = new Schema({
   title: { type: String, required: true },
