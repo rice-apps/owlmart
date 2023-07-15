@@ -2,7 +2,7 @@ import owl from "./owl.png";
 import "./Landing.css";
 import {Navbar} from "./navbar";
 
-function App() {
+export const LandingPage = () => {
   return (
     <div className="App">
       <Navbar>
@@ -18,4 +18,3 @@ function App() {
     </div>
   );
 }
-export default App;
