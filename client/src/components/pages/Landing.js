@@ -1,7 +1,7 @@
 import owl from './owl.png';
 import './Landing.css';
 
-function App() {
+export const LandingPage = () => {
   return (
     <div className="App">
 
@@ -32,4 +32,4 @@ function App() {
   );
 }
 
-export default App;
+export default LandingPage;
