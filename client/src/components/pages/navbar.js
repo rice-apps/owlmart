@@ -8,6 +8,10 @@ export const Navbar = () => {
       <Toolbar>
         <Box sx={{ display: "flex", justifyContent: "space-between", flexGrow: 1 }}>
 
+        <Link to='/home'>
+              <Typography variant="body1">Home</Typography>
+            </Link>
+
           <Link to='/favorites'>
               <Typography variant="body1">Favorites</Typography>
             </Link>
@@ -17,9 +21,6 @@ export const Navbar = () => {
               <Typography variant="body1">Cart</Typography>
             </Link>
 
-            <Link to='/home'>
-              <Typography variant="body1">Home</Typography>
-            </Link>
 
         </Box>
       </Toolbar>
