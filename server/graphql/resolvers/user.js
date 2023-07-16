@@ -8,7 +8,7 @@ const bcrypt = require('bcrypt');
 module.exports = {
 
 Mutation: {
-    CreateUser: async (_, { netID }, context) => {
+    createUser: async (_, { netID }, context) => {
         
         const newUser = new User ({
             netID, first_name, middle_initital, last_name,
