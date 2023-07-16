@@ -1,9 +1,9 @@
 const { AuthenticationError } = require('apollo-server');
 const User = require('../../models/User');
 const bcrypt = require('bcrypt');
-const { MONGODB } = require('../../../config');
-var MongoClient = require("mongodb").MongoClient;
-var url = MONGODB
+//const { MONGODB } = require('../../../config');
+//var MongoClient = require("mongodb").MongoClient;
+//var url = MONGODB
 
 module.exports = {
 
@@ -20,7 +20,7 @@ Mutation: {
         newUser.password = await bcrypt.hash(password,10); //saltRounds of 10
         
         //Empty NetID error
-        if (netID?.trim() === '') {
+        if (netID.trim() === '') {
             throw new Error('NetID must not be empty');
           }
         // Non-valid email error
@@ -32,6 +32,6 @@ Mutation: {
         const user = await newUser.save();
             
         return user;
-    }
-  }
-}
+    },
+  },
+};

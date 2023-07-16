@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
+const {model, Schema} = require('mongoose');
 
-const userSchema = new mongoose.Schema({
+const userSchema = new Schema({
   netID: { type: String, required: true, unique: true } ,
   first_name: { type: String, required: true },
   middle_initial: {type: String, required: false},
@@ -25,5 +25,4 @@ userSchema.post('save', function(error, doc, next) {
       }
   });
 
-const User = mongoose.model('User', userSchema);
-module.exports = User;
+module.exports =  model('User', userSchema);
