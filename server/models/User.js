@@ -1,14 +1,31 @@
-const mongoose = require('mongoose');
-
-const userSchema = new mongoose.Schema({
-  _id: Schema.Types.ObjectId,
-  username: { type: String, required: true, unique: true } ,
-  name: { type: String, required: true },
-  password: { type: String, required: true },
-  email: { type: String, required: true, unique:true },
-  payment: { type: String },
-  college: { type: String },
-});
-
 const User = mongoose.model('User', userSchema);
 module.exports = User;
+
+const {model, Schema} = require('mongoose');
+
+const userSchema = new Schema({
+  netID: { type: String, required: true, unique: true } ,
+  first_name: { type: String, required: true },
+  middle_initial: {type: String, required: false, maxLength: 1},
+  last_name: {type:String, required:true},
+  password: { type: String, required: true },
+  email: { type: String, required: true, unique:true },
+  payment: { type: String, required: true },
+  college: { type: String, enum: ["Baker", "Jones", "McMurtry", "Will Rice", "Sid Richardson", "Lovett", "Duncan", "Brown", "Martel", "Hanszen", "Weiss"]},
+});
+
+ //Email AND NetID already in database error handling
+userSchema.post('save', function(error, doc, next) {
+    if (error.email === 'MongoServerError' && error.code === 11000) {
+      next(new Error('Email already in use'));
+    } else {
+      next();
+    }
+    if (error.netID === 'MongoServerError' && error.code === 11000) {
+        next(new Error('netID already in use'));
+      } else {
+        next();
+      }
+  });
+
+module.exports =  model('User', userSchema);
