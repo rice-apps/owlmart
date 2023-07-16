@@ -23,3 +23,4 @@ const listingSchema = new Schema({
 
 const Listing = model('Listing', listingSchema);
 module.exports = Listing;
+module.exports = categories;
