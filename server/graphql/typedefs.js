@@ -13,4 +13,18 @@ module.exports = gql`
     createDog(name: String!): Dog!
     deleteDog(dogId: ID!): String!
   }
+  type User {
+    id: ID!
+    netID: String!
+    first_name: String!
+    middle_initial: String!
+    last_name: String!
+    password: String!
+    email: String!
+    payment: String!
+    college: String!
+  }
+  type Mutation {
+    CreateUser(netID: String!, first_name: String!, middle_initial: String!, last_name: String!, password: String!, email: String!, payment: String!, college: String!): User!
+  }
 `;
