@@ -12,13 +12,15 @@ export const Navbar = () => {
               <Typography variant="body1">Favorites</Typography>
             </Link>
 
-            <Link to='/home'>
-              <Typography variant="body1">Home</Typography>
-            </Link>
 
             <Link to='/cart'>
               <Typography variant="body1">Cart</Typography>
             </Link>
+
+            <Link to='/home'>
+              <Typography variant="body1">Home</Typography>
+            </Link>
+
         </Box>
       </Toolbar>
     </AppBar>
