@@ -3,7 +3,7 @@ const {model, Schema} = require('mongoose');
 const userSchema = new Schema({
   netID: { type: String, required: true, unique: true } ,
   first_name: { type: String, required: true },
-  middle_initial: {type: String, required: false},
+  middle_initial: {type: String, required: false, maxLength: 1},
   last_name: {type:String, required:true},
   password: { type: String, required: true },
   email: { type: String, required: true, unique:true },
