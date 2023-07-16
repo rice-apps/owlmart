@@ -1,6 +1,6 @@
 const {model, Schema} = require('mongoose');
 
-const userSchema = new mongoose.Schema({
+const userSchema = new Schema({
   netID: { type: String, required: true, unique: true } ,
   first_name: { type: String, required: true },
   middle_initial: {type: String, required: false},
