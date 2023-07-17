@@ -1,4 +1,3 @@
-
 import React from "react";
 import { AppBar, Toolbar, Typography, Box } from "@mui/material";
 import { Link } from 'react-router-dom';
@@ -17,11 +16,9 @@ export const Navbar = () => {
               <Typography variant="body1">Favorites</Typography>
             </Link>
 
-
             <Link to='/cart'>
               <Typography variant="body1">Cart</Typography>
             </Link>
-
 
         </Box>
       </Toolbar>

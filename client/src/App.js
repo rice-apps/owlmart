@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { LandingPage } from './components/pages/LandingPage';
-import { HomePage } from './components/pages/HomePage';
+import { HomePage } from './components/pages/Home';
 import { Cart } from './components/pages/Cart';
 import { Favorites } from './components/pages/Favorites';
+import { LandingPage } from './components/pages/LandingPage';
 
 const App = () => {
   return (
@@ -16,6 +16,8 @@ const App = () => {
 			</Route>
         	<Route path="/favorites" exact element = {<Favorites/>}>
 			</Route>
+
+			
 		</Routes>
 	</Router>
   );
