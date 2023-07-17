@@ -1,6 +1,8 @@
 import owl from "./owl.png";
 import "./Landing.css";
-import {Navbar} from "./navbar";
+import {Navbar} from "./navbar.js";
+import { Route, BrowserRouter as Router, Routes} from "react-router-dom";
+
 
 export const LandingPage = () => {
   return (
@@ -18,3 +20,5 @@ export const LandingPage = () => {
     </div>
   );
 }
+
+export default LandingPage;
