@@ -27,9 +27,8 @@ export const Navbar = () => {
       <Toolbar>
     <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100vw' }}>
       <Box  sx={{
-            flex: 1,
 
-            backgroundColor: 'blue',}}>
+            backgroundColor: 'transparent',}}>
         <Link to="/home" style={{ textDecoration: 'none' }}>
           <Typography variant="h1" sx={{ fontSize: '2rem', fontFamily: 'Arial', fontWeight: 'bold', color: '#2E4561' }}>
             OWLMART
@@ -71,7 +70,7 @@ export const Navbar = () => {
         />
       </Box>
 
-      <Box sx={{ display: 'flex', backgroundColor:"transparent", width: "22vw", justifyContent: "space-between"}}>
+      <Box sx={{ display: 'flex', backgroundColor:"transparent", width: "22vw", justifyContent: "space-between" }}>
         <IconButton>
           <img src={favoritesIcon} alt="favorites" style={{ width: '2.2rem', height: '2rem' }} />
         </IconButton>
