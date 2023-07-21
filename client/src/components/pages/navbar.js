@@ -4,10 +4,9 @@ import { Link } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import SearchIcon from '@mui/icons-material/Search';
 
-
-import favoritesIcon from '../../assets/favorites-icon.png';
-import messageIcon from '../../assets/message-icon.png';
-import addIcon from '../../assets/add-icon.png';
+import favoritesIcon from '../../assets/favorites-icon.svg';
+import messageIcon from '../../assets/message-icon.svg';
+import addIcon from '../../assets/add-icon.svg';
 
 export const Navbar = () => {
   const [searchValue, setSearchValue] = useState('');
@@ -22,7 +21,7 @@ export const Navbar = () => {
       boxShadow: 'none',
       marginTop: ".6vh",
       height: '', // Set the height to a percentage of the viewport height (vh)
-     
+     // import mui font, do svg icons
     }}>
       <Toolbar>
     <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100vw' }}>
