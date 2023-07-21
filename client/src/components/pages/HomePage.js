@@ -1,9 +1,12 @@
-import React from 'react';
-import { Card, CardContent, CardActionArea, Grid, CardMedia, Typography, IconButton, Box } from '@mui/material';
+import React, { useState } from 'react';
+import { Card, CardContent, CardActionArea, Grid, CardMedia, Typography, IconButton, Box, Accordion, AccordionSummary, AccordionDetails, Slider } from '@mui/material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import Button from '@mui/material/Button';
 import Owl from './owl.png';
 import test from './test.png';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
 
 import favoritesIcon from "../../assets/favorites-icon.svg";
 
@@ -14,7 +17,6 @@ const listingsData = [
   { id: 4, title: 'bdfb Name 2', seller: 'John sdf', description: "worth an investment", price: '$50.50', image: test, pickup: 'off-campus', category: 'insert tags' },
   { id: 5, title: '3242 Name 2', seller: 'dfsdfsd sdf', description: "worth an investment", price: '$50.50', image: test, pickup: 'off-campus', category: 'insert tags' },
   { id: 6, title: '543 2', seller: 'dfgfd Doe', description: "worth an investment", price: '$50.50', image: test, pickup: 'off-campus', category: 'insert tags' },
-
 ];
 
 const CardComponent = ({ image, title, price, seller }) => {
@@ -27,7 +29,6 @@ const CardComponent = ({ image, title, price, seller }) => {
       boxShadow: 'none',
       display: 'flex',
       flexDirection: 'column',
-
     }}>
       <CardActionArea>
         <Box borderRadius="10px" overflow="hidden">
@@ -66,10 +67,55 @@ const CardComponent = ({ image, title, price, seller }) => {
   );
 };
 
+const PriceSlider = () => {
+  const [priceRange, setPriceRange] = useState([0, 200]); // Default price range
+
+  const handleSliderChange = (event, newValue) => {
+    setPriceRange(newValue);
+  };
+
+  return (
+    <Box>
+      <Typography gutterBottom>Price Range</Typography>
+      <Slider
+        value={priceRange}
+        onChange={handleSliderChange}
+        valueLabelDisplay="auto"
+        min={0}
+        max={500}
+      />
+      <Typography gutterBottom>Min: ${priceRange[0]}</Typography>
+      <Typography gutterBottom>Max: ${priceRange[1]}</Typography>
+    </Box>
+  );
+};
+
+const PriceDropdown = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const handleAccordionChange = (event, isExpanded) => {
+    setIsExpanded(isExpanded);
+  };
+
+  return (
+    <Accordion expanded={isExpanded} onChange={handleAccordionChange}>
+      <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+        <Typography sx={{ fontFamily: "Lato-bold", fontSize: "1.3rem" }}>Price:</Typography>
+        <IconButton size="small">
+          {isExpanded ? <RemoveIcon /> : <AddIcon />}
+        </IconButton>
+      </AccordionSummary>
+      <AccordionDetails>
+        <PriceSlider />
+      </AccordionDetails>
+    </Accordion>
+  );
+};
+
 const Products = () => {
   return (
-    <Box display="flex" width="80vw" marginRight="2vw" marginTop = "10vh" backgroundColor = "blue">
-      <Grid container spacing = {1} >
+    <Box display="flex" flexDirection="column" width="80vw" marginRight="2vw" marginTop="10vh" backgroundColor="blue">
+      <Grid container spacing={1}>
         {listingsData.map((listing) => (
           <Grid item key={listing.id} xs={12} sm={6} md={4} lg={4}>
             <CardComponent
@@ -85,25 +131,26 @@ const Products = () => {
   );
 };
 
-
 const Filters = () => {
   return (
-  <Box sx={{ backgroundColor: "green", height: "100vh", width: "20vw", marginLeft: '5vw' }}>
-    <Typography sx={{ fontFamily: "Lato-Bold", fontSize: "3rem" }}>
-      Items
-    </Typography>
+    <Box sx={{ backgroundColor: "green", height: "100vh", width: "20vw", marginLeft: '5vw' }}>
+      <Typography sx={{ fontFamily: "Lato-Bold", fontSize: "3rem" }}>
+        Items
+      </Typography>
+      <Typography sx={{ fontFamily: "Lato-regular", fontSize: "1rem", marginBottom: '0.5rem', marginTop: '1rem' }}>
+        Filters
+      </Typography>
 
-    <Typography sx={{ fontFamily: "Lato-regular", fontSize: "1rem", marginBottom: '0.5rem', marginTop: '1rem' }}>
-      Filters
-    </Typography>
-  </Box>
-  )
-}
+      <PriceDropdown /> {/* Adding the PriceDropdown component */}
+      
+    </Box>
+  );
+};
 
 export const HomePage = () => {
   return (
     <>
-      <Box display = "flex" justifyContent="space-between">
+      <Box display="flex" justifyContent="space-between">
         <Filters />
         <Products />
       </Box>
