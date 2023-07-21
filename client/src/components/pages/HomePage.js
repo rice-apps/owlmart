@@ -1,5 +1,20 @@
 import React, { useState } from 'react';
-import { Card, CardContent, CardActionArea, Grid, CardMedia, Typography, IconButton, Box, Accordion, AccordionSummary, AccordionDetails, Slider } from '@mui/material';
+import {
+  Card,
+  CardContent,
+  CardActionArea,
+  Grid,
+  CardMedia,
+  Typography,
+  IconButton,
+  Box,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+  Slider,
+  Checkbox,
+  FormControlLabel, // Add this import statement
+} from '@mui/material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import Button from '@mui/material/Button';
 import Owl from './owl.png';
@@ -76,7 +91,7 @@ const PriceSlider = () => {
 
   return (
     <Box>
-      <Typography gutterBottom>Price Range</Typography>
+
       <Slider
         value={priceRange}
         onChange={handleSliderChange}
@@ -98,23 +113,140 @@ const PriceDropdown = () => {
   };
 
   return (
-    <Accordion expanded={isExpanded} onChange={handleAccordionChange}>
+    <Accordion expanded={isExpanded} onChange={handleAccordionChange} elevation={0}>
       <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-        <Typography sx={{ fontFamily: "Lato-bold", fontSize: "1.3rem" }}>Price:</Typography>
-        <IconButton size="small">
-          {isExpanded ? <RemoveIcon /> : <AddIcon />}
-        </IconButton>
+        <Typography sx={{ fontFamily: "Libre Baskerville-regular", fontSize: "1.3rem" }}>Price:</Typography>
+
       </AccordionSummary>
-      <AccordionDetails>
+      <AccordionDetails sx={{ border: 'none' }}>
         <PriceSlider />
       </AccordionDetails>
     </Accordion>
   );
 };
 
+const CategoryAccordion = () => {
+  const [categoryState, setCategoryState] = useState({
+    category1: false,
+    category2: false,
+    category3: false,
+    category4: false,
+  });
+
+  const handleCategoryChange = (event) => {
+    setCategoryState((prevCategoryState) => ({
+      ...prevCategoryState,
+      [event.target.name]: event.target.checked,
+    }));
+  };
+  
+
+  return (
+    <Accordion elevation={0}>
+      <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+      <Typography sx={{ fontFamily: "Libre Baskerville-regular", fontSize: "1.3rem" }}>Category:</Typography>
+      </AccordionSummary>
+      <AccordionDetails sx={{ display: 'block', border: "none"}}>
+        <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={categoryState.category1}
+                onChange={handleCategoryChange}
+                name="category1"
+              />
+            }
+            label={<Typography sx={{ fontFamily: "Libre Baskerville-regular", fontSize: "1rem" }}>Clothing</Typography>}
+          />
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={categoryState.category2}
+                onChange={handleCategoryChange}
+                name="category1"
+              />
+            }
+            label={<Typography sx={{ fontFamily: "Libre Baskerville-regular", fontSize: "1rem" }}>Furniture</Typography>}
+          />
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={categoryState.category3}
+                onChange={handleCategoryChange}
+                name="category1"
+              />
+            }
+            label={<Typography sx={{ fontFamily: "Libre Baskerville-regular", fontSize: "1rem" }}>Appliances</Typography>}
+          />
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={categoryState.category4}
+                onChange={handleCategoryChange}
+                name="category1"
+              />
+            }
+            label={<Typography sx={{ fontFamily: "Libre Baskerville-regular", fontSize: "1rem" }}>Other</Typography>}
+          />
+        </Box>
+      </AccordionDetails>
+    </Accordion>
+  );
+};
+
+const PickupAccordion = () => {
+  const [pickupState, setPickupState] = useState({
+    onCampus: false,
+    offCampus: false,
+  });
+
+  const handlePickupChange = (event) => {
+    setPickupState((prevPickupState) => ({
+      ...prevPickupState,
+      [event.target.name]: event.target.checked,
+    }));
+  };
+
+  return (
+    <Accordion elevation={0}>
+      <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+        <Typography sx={{ fontFamily: "Libre Baskerville-regular", fontSize: "1.3rem" }}>
+          Pickup:
+        </Typography>
+      </AccordionSummary>
+      <AccordionDetails sx={{ display: 'block', border: 'none' }}>
+        <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={pickupState.onCampus}
+                onChange={handlePickupChange}
+                name="onCampus"
+              />
+            }
+            label={<Typography sx={{ fontFamily: "Libre Baskerville-regular", fontSize: "1rem" }}>On Campus</Typography>}
+          />
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={pickupState.offCampus}
+                onChange={handlePickupChange}
+                name="offCampus"
+              />
+            }
+            label={<Typography sx={{ fontFamily: "Libre Baskerville-regular", fontSize: "1rem" }}>Off Campus</Typography>}
+          />
+        </Box>
+      </AccordionDetails>
+    </Accordion>
+  );
+};
+
+export default PickupAccordion;
+
 const Products = () => {
   return (
-    <Box display="flex" flexDirection="column" width="80vw" marginRight="2vw" marginTop="10vh" backgroundColor="blue">
+    <Box display="flex" flexDirection="column" width="80vw" marginRight="2vw" marginTop="10vh" backgroundColor="transparent">
       <Grid container spacing={1}>
         {listingsData.map((listing) => (
           <Grid item key={listing.id} xs={12} sm={6} md={4} lg={4}>
@@ -133,15 +265,17 @@ const Products = () => {
 
 const Filters = () => {
   return (
-    <Box sx={{ backgroundColor: "green", height: "100vh", width: "20vw", marginLeft: '5vw' }}>
+    <Box sx={{ backgroundColor: "transparent", height: "100vh", width: "20vw", marginLeft: '5vw', marginRight: "2vw" }}>
       <Typography sx={{ fontFamily: "Lato-Bold", fontSize: "3rem" }}>
         Items
       </Typography>
-      <Typography sx={{ fontFamily: "Lato-regular", fontSize: "1rem", marginBottom: '0.5rem', marginTop: '1rem' }}>
+      <Typography sx={{ fontFamily: "Lato-regular", fontSize: "1.4rem", marginBottom: '0.5rem', marginTop: '1rem' }}>
         Filters
       </Typography>
 
-      <PriceDropdown /> {/* Adding the PriceDropdown component */}
+      <PriceDropdown />
+      <CategoryAccordion />
+      <PickupAccordion />
       
     </Box>
   );
