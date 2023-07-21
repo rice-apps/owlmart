@@ -44,16 +44,18 @@ export const Navbar = () => {
           value={searchValue}
           onChange={handleSearchChange}
           sx={{
-            width: '40vw',
+            width: '30rem',
             '& .MuiOutlinedInput-root': {
               borderRadius: '20px',
               backgroundColor: 'transparent',
               '& fieldset': {
                 borderColor: '#2E4561',
               },
-            },
-            '& input::-webkit-input-placeholder': {
-              color: '#9EB8D7',
+              '& ::placeholder': {
+                fontFamily: 'Libre Baskerville', // Set the desired font family
+                fontWeight: 'bold', // Set the desired font weight
+                color: '#9EB8D7', // Set the desired color for the placeholder text
+              },
             },
             color: 'white',
           }}
