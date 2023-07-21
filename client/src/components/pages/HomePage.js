@@ -13,15 +13,13 @@ import {
   AccordionDetails,
   Slider,
   Checkbox,
-  FormControlLabel, // Add this import statement
+  FormControlLabel,
 } from '@mui/material';
-import FavoriteIcon from '@mui/icons-material/Favorite';
+
 import Button from '@mui/material/Button';
 import Owl from './owl.png';
 import test from './test.png';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import AddIcon from '@mui/icons-material/Add';
-import RemoveIcon from '@mui/icons-material/Remove';
 
 import favoritesIcon from "../../assets/favorites-icon.svg";
 
@@ -51,25 +49,42 @@ const CardComponent = ({ image, title, price, seller }) => {
         </Box>
         
         <CardContent sx={{ marginBottom: '1rem' }}>
-          <Typography sx={{ fontFamily: "Lato-regular", fontSize: "1.7rem", marginBottom: '0.5rem' }}>
+          <Typography sx={{
+            fontFamily: "Lato-regular",
+            fontSize: "1.7rem",
+            marginBottom: '0.5rem',
+          }}>
             {title}
           </Typography>
   
-          <Typography sx={{ fontFamily: "Lato-bold", fontSize: "1.3rem", marginBottom: '0.5rem' }}>
+          <Typography sx={{
+            fontFamily: "Lato-bold",
+            fontSize: "1.3rem",
+            marginBottom: '0.5rem',
+          }}>
             Price: {price}
           </Typography>
   
-          <Typography sx={{ fontFamily: "Libre-regular", fontSize: "1rem" }}>
+          <Typography sx={{
+            fontFamily: "Libre-regular",
+            fontSize: "1rem",
+          }}>
             {seller}
           </Typography>
         </CardContent>
   
         <Box display="flex" justifyContent="space-between" alignItems="center" marginLeft="1rem" marginBottom="1rem">
-          <Button variant="contained" sx={{ color: '#141517', backgroundColor: '#B6CEEA', fontFamily: "Lato-regular", fontSize: "1.1rem", textTransform: 'none' }}>
+          <Button variant="contained" sx={{
+            color: '#141517',
+            backgroundColor: '#B6CEEA',
+            fontFamily: "Lato-regular",
+            fontSize: "1.1rem",
+            textTransform: 'none',
+          }}>
             Contact Seller
           </Button>
   
-          <IconButton  aria-label="add to favorites">
+          <IconButton aria-label="add to favorites">
             <img
               src={favoritesIcon}
               alt="favorite"
@@ -83,7 +98,7 @@ const CardComponent = ({ image, title, price, seller }) => {
 };
 
 const PriceSlider = () => {
-  const [priceRange, setPriceRange] = useState([0, 200]); // Default price range
+  const [priceRange, setPriceRange] = useState([0, 999]); // Default price range
 
   const handleSliderChange = (event, newValue) => {
     setPriceRange(newValue);
@@ -91,7 +106,6 @@ const PriceSlider = () => {
 
   return (
     <Box>
-
       <Slider
         value={priceRange}
         onChange={handleSliderChange}
@@ -115,8 +129,12 @@ const PriceDropdown = () => {
   return (
     <Accordion expanded={isExpanded} onChange={handleAccordionChange} elevation={0}>
       <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-        <Typography sx={{ fontFamily: "Libre Baskerville-regular", fontSize: "1.3rem" }}>Price:</Typography>
-
+        <Typography sx={{
+          fontFamily: "Libre Baskerville-regular",
+          fontSize: "1.3rem",
+        }}>
+          Price:
+        </Typography>
       </AccordionSummary>
       <AccordionDetails sx={{ border: 'none' }}>
         <PriceSlider />
@@ -144,9 +162,14 @@ const CategoryAccordion = () => {
   return (
     <Accordion elevation={0}>
       <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-      <Typography sx={{ fontFamily: "Libre Baskerville-regular", fontSize: "1.3rem" }}>Category:</Typography>
+        <Typography sx={{
+          fontFamily: "Libre Baskerville-regular",
+          fontSize: "1.3rem",
+        }}>
+          Category:
+        </Typography>
       </AccordionSummary>
-      <AccordionDetails sx={{ display: 'block', border: "none"}}>
+      <AccordionDetails sx={{ display: 'block', border: "none" }}>
         <Box sx={{ display: 'flex', flexDirection: 'column' }}>
           <FormControlLabel
             control={
@@ -156,37 +179,49 @@ const CategoryAccordion = () => {
                 name="category1"
               />
             }
-            label={<Typography sx={{ fontFamily: "Libre Baskerville-regular", fontSize: "1rem" }}>Clothing</Typography>}
+            label={<Typography sx={{
+              fontFamily: "Libre Baskerville-regular",
+              fontSize: "1rem",
+            }}>Clothing</Typography>}
           />
           <FormControlLabel
             control={
               <Checkbox
                 checked={categoryState.category2}
                 onChange={handleCategoryChange}
-                name="category1"
+                name="category2"
               />
             }
-            label={<Typography sx={{ fontFamily: "Libre Baskerville-regular", fontSize: "1rem" }}>Furniture</Typography>}
+            label={<Typography sx={{
+              fontFamily: "Libre Baskerville-regular",
+              fontSize: "1rem",
+            }}>Furniture</Typography>}
           />
           <FormControlLabel
             control={
               <Checkbox
                 checked={categoryState.category3}
                 onChange={handleCategoryChange}
-                name="category1"
+                name="category3"
               />
             }
-            label={<Typography sx={{ fontFamily: "Libre Baskerville-regular", fontSize: "1rem" }}>Appliances</Typography>}
+            label={<Typography sx={{
+              fontFamily: "Libre Baskerville-regular",
+              fontSize: "1rem",
+            }}>Appliances</Typography>}
           />
           <FormControlLabel
             control={
               <Checkbox
                 checked={categoryState.category4}
                 onChange={handleCategoryChange}
-                name="category1"
+                name="category4"
               />
             }
-            label={<Typography sx={{ fontFamily: "Libre Baskerville-regular", fontSize: "1rem" }}>Other</Typography>}
+            label={<Typography sx={{
+              fontFamily: "Libre Baskerville-regular",
+              fontSize: "1rem",
+            }}>Other</Typography>}
           />
         </Box>
       </AccordionDetails>
@@ -210,7 +245,10 @@ const PickupAccordion = () => {
   return (
     <Accordion elevation={0}>
       <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-        <Typography sx={{ fontFamily: "Libre Baskerville-regular", fontSize: "1.3rem" }}>
+        <Typography sx={{
+          fontFamily: "Libre Baskerville-regular",
+          fontSize: "1.3rem",
+        }}>
           Pickup:
         </Typography>
       </AccordionSummary>
@@ -224,7 +262,10 @@ const PickupAccordion = () => {
                 name="onCampus"
               />
             }
-            label={<Typography sx={{ fontFamily: "Libre Baskerville-regular", fontSize: "1rem" }}>On Campus</Typography>}
+            label={<Typography sx={{
+              fontFamily: "Libre Baskerville-regular",
+              fontSize: "1rem",
+            }}>On Campus</Typography>}
           />
           <FormControlLabel
             control={
@@ -234,15 +275,16 @@ const PickupAccordion = () => {
                 name="offCampus"
               />
             }
-            label={<Typography sx={{ fontFamily: "Libre Baskerville-regular", fontSize: "1rem" }}>Off Campus</Typography>}
+            label={<Typography sx={{
+              fontFamily: "Libre Baskerville-regular",
+              fontSize: "1rem",
+            }}>Off Campus</Typography>}
           />
         </Box>
       </AccordionDetails>
     </Accordion>
   );
 };
-
-export default PickupAccordion;
 
 const Products = () => {
   return (
