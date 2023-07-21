@@ -139,9 +139,8 @@ export const Navbar = () => {
                 borderRadius: "20px",
                 textTransform: "none",
                 backgroundColor: "#2E4561",
-                fontFamily: "Lato-regular",
-                fontSize: "1.1rem",
-                fontWeight: "bold",
+                fontFamily: "Lato-bold",
+                fontSize: "1rem",
                 paddingLeft: "1.5rem",
                 paddingRight: "1.5rem",
               }}
