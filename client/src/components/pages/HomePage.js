@@ -9,11 +9,11 @@ import favoritesIcon from "../../assets/favorites-icon.svg";
 
 const listingsData = [
   { id: 1, title: 'Item Name', seller: "aaron", description: "very good", price: '$100.00', image: Owl, pickup: 'on-campus', category: 'insert tags'},
-  { id: 2, title: 'Item Name 2', seller: 'John Doe', description: "worth an investment", price: '$50.50', image: test, pickup: 'off-campus', category: 'insert tags' },
-  { id: 2, title: 'Item Name 2', seller: 'John Doe', description: "worth an investment", price: '$50.50', image: test, pickup: 'off-campus', category: 'insert tags' },
-  { id: 2, title: 'Item Name 2', seller: 'John Doe', description: "worth an investment", price: '$50.50', image: test, pickup: 'off-campus', category: 'insert tags' },
-  { id: 2, title: 'Item Name 2', seller: 'John Doe', description: "worth an investment", price: '$50.50', image: test, pickup: 'off-campus', category: 'insert tags' },
-  { id: 2, title: 'Item Name 2', seller: 'John Doe', description: "worth an investment", price: '$50.50', image: test, pickup: 'off-campus', category: 'insert tags' },
+  { id: 2, title: 'Item saf 2', seller: 'dsf', description: "worth an investment", price: '$50.50', image: test, pickup: 'off-campus', category: 'insert tags' },
+  { id: 3, title: 'dsfa 2', seller: 'sdf', description: "worth an investment", price: '$50.50', image: test, pickup: 'off-campus', category: 'insert tags' },
+  { id: 4, title: 'bdfb Name 2', seller: 'John sdf', description: "worth an investment", price: '$50.50', image: test, pickup: 'off-campus', category: 'insert tags' },
+  { id: 5, title: '3242 Name 2', seller: 'dfsdfsd sdf', description: "worth an investment", price: '$50.50', image: test, pickup: 'off-campus', category: 'insert tags' },
+  { id: 6, title: '543 2', seller: 'dfgfd Doe', description: "worth an investment", price: '$50.50', image: test, pickup: 'off-campus', category: 'insert tags' },
 
 ];
 
@@ -27,11 +27,11 @@ const CardComponent = ({ image, title, price, seller }) => {
       boxShadow: 'none',
       display: 'flex',
       flexDirection: 'column',
-      padding: 0
+
     }}>
       <CardActionArea>
         <Box borderRadius="10px" overflow="hidden">
-          <CardMedia component="img" height="325" image={image} alt={title} />
+          <CardMedia component="img" height="370" image={image} alt={title} />
         </Box>
         
         <CardContent sx={{ marginBottom: '1rem' }}>
@@ -53,7 +53,7 @@ const CardComponent = ({ image, title, price, seller }) => {
             Contact Seller
           </Button>
   
-          <IconButton color="secondary" aria-label="add to favorites">
+          <IconButton  aria-label="add to favorites">
             <img
               src={favoritesIcon}
               alt="favorite"
@@ -68,8 +68,8 @@ const CardComponent = ({ image, title, price, seller }) => {
 
 const Products = () => {
   return (
-    <Box display="flex" width="50vw" marginRight="5vw" marginTop = "10vh">
-      <Grid container spacing={3}>
+    <Box display="flex" width="80vw" marginRight="2vw" marginTop = "10vh" backgroundColor = "blue">
+      <Grid container spacing = {1} >
         {listingsData.map((listing) => (
           <Grid item key={listing.id} xs={12} sm={6} md={4} lg={4}>
             <CardComponent
@@ -97,21 +97,14 @@ const Filters = () => {
       Filters
     </Typography>
   </Box>
-
-    
-
-
   )
 }
-
-
 
 export const HomePage = () => {
   return (
     <>
-      <h1>This is the home page</h1>
       <Box display = "flex" justifyContent="space-between">
-       <Filters />
+        <Filters />
         <Products />
       </Box>
     </>
