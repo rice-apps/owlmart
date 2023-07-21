@@ -31,8 +31,6 @@ export const Navbar = () => {
         backgroundColor: "transparent",
         boxShadow: "none",
         marginTop: ".6vh",
-        height: "", // Set the height to a percentage of the viewport height (vh)
-
       }}
     >
       <Toolbar>
