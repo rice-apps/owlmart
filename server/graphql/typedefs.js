@@ -26,5 +26,6 @@ module.exports = gql`
   }
   type Mutation {
     createUser(netID: String!, first_name: String!, middle_initial: String!, last_name: String!, password: String!, email: String!, payment: String!, college: String!): User!
+    deleteUser(userId: ID!): String!
   }
 `;
