@@ -32,6 +32,7 @@ export const Navbar = () => {
         backgroundColor: "transparent",
         boxShadow: "none",
         marginTop: ".6vh",
+        marginBottom: "3vh"
       }}
     >
       <Toolbar>
@@ -120,6 +121,7 @@ export const Navbar = () => {
               />
             </IconButton>
             </Link>
+
             <IconButton>
               <img
                 src={messageIcon}
@@ -156,3 +158,5 @@ export const Navbar = () => {
     </AppBar>
   );
 };
+
+

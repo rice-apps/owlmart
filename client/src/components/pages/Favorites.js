@@ -21,14 +21,15 @@ import Owl from './owl.png';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 import favoritesIcon from "../../assets/favorites-icon.svg";
+import { Navbar } from "./navbar";
 
 const listingsData = [
   { id: 1, title: 'Item Name', seller: "aaron", description: "very good", price: '$100.00', image: Owl, pickup: 'on-campus', category: 'insert tags'},
-  { id: 2, title: 'Item saf 2', seller: 'dsf', description: "worth an investment", price: '$50.50', image: test, pickup: 'off-campus', category: 'insert tags' },
-  { id: 3, title: 'dsfa 2', seller: 'sdf', description: "worth an investment", price: '$50.50', image: test, pickup: 'off-campus', category: 'insert tags' },
-  { id: 4, title: 'bdfb Name 2', seller: 'John sdf', description: "worth an investment", price: '$50.50', image: test, pickup: 'off-campus', category: 'insert tags' },
-  { id: 5, title: '3242 Name 2', seller: 'dfsdfsd sdf', description: "worth an investment", price: '$50.50', image: test, pickup: 'off-campus', category: 'insert tags' },
-  { id: 6, title: '543 2', seller: 'dfgfd Doe', description: "worth an investment", price: '$50.50', image: test, pickup: 'off-campus', category: 'insert tags' },
+  { id: 2, title: 'Item saf 2', seller: 'dsf', description: "worth an investment", price: '$50.50', image: Owl, pickup: 'off-campus', category: 'insert tags' },
+  { id: 3, title: 'dsfa 2', seller: 'sdf', description: "worth an investment", price: '$50.50', image: Owl, pickup: 'off-campus', category: 'insert tags' },
+  { id: 4, title: 'bdfb Name 2', seller: 'John sdf', description: "worth an investment", price: '$50.50', image: Owl, pickup: 'off-campus', category: 'insert tags' },
+  { id: 5, title: '3242 Name 2', seller: 'dfsdfsd sdf', description: "worth an investment", price: '$50.50', image: Owl, pickup: 'off-campus', category: 'insert tags' },
+  { id: 6, title: '543 2', seller: 'dfgfd Doe', description: "worth an investment", price: '$50.50', image: Owl, pickup: 'off-campus', category: 'insert tags' },
 ];
 
 const CardComponent = ({ image, title, price, seller }) => {
@@ -41,13 +42,14 @@ const CardComponent = ({ image, title, price, seller }) => {
       boxShadow: 'none',
       display: 'flex',
       flexDirection: 'column',
+	  
     }}>
       <CardActionArea>
         <Box borderRadius="10px" overflow="hidden">
           <CardMedia component="img" height="370" image={image} alt={title} />
         </Box>
         
-        <CardContent sx={{ marginBottom: '1rem' }}>
+        <CardContent sx={{ marginBottom: '1rem', color: '#141517', }}>
           <Typography sx={{
             fontFamily: "Lato-regular",
             fontSize: "1.7rem",
@@ -112,8 +114,8 @@ const PriceSlider = () => {
         min={0}
         max={500}
       />
-      <Typography gutterBottom>Min: ${priceRange[0]}</Typography>
-      <Typography gutterBottom>Max: ${priceRange[1]}</Typography>
+      <Typography gutterBottom sx={{color: "#2E4561"}}>Min: ${priceRange[0]}</Typography>
+      <Typography gutterBottom sx={{color: "#2E4561"}}>Max: ${priceRange[1]}</Typography>
     </Box>
   );
 };
@@ -131,6 +133,7 @@ const PriceDropdown = () => {
         <Typography sx={{
           fontFamily: "Libre Baskerville-regular",
           fontSize: "1.3rem",
+		  color: "#2E4561"
         }}>
           Price:
         </Typography>
@@ -164,6 +167,7 @@ const CategoryAccordion = () => {
         <Typography sx={{
           fontFamily: "Libre Baskerville-regular",
           fontSize: "1.3rem",
+		  color: "#2E4561"
         }}>
           Category:
         </Typography>
@@ -181,6 +185,7 @@ const CategoryAccordion = () => {
             label={<Typography sx={{
               fontFamily: "Libre Baskerville-regular",
               fontSize: "1rem",
+			  color: "#2E4561"
             }}>Clothing</Typography>}
           />
           <FormControlLabel
@@ -194,6 +199,7 @@ const CategoryAccordion = () => {
             label={<Typography sx={{
               fontFamily: "Libre Baskerville-regular",
               fontSize: "1rem",
+			  color: "#2E4561"
             }}>Furniture</Typography>}
           />
           <FormControlLabel
@@ -207,6 +213,7 @@ const CategoryAccordion = () => {
             label={<Typography sx={{
               fontFamily: "Libre Baskerville-regular",
               fontSize: "1rem",
+			  color: "#2E4561"
             }}>Appliances</Typography>}
           />
           <FormControlLabel
@@ -220,6 +227,7 @@ const CategoryAccordion = () => {
             label={<Typography sx={{
               fontFamily: "Libre Baskerville-regular",
               fontSize: "1rem",
+			  color: "#2E4561"
             }}>Other</Typography>}
           />
         </Box>
@@ -247,6 +255,7 @@ const PickupAccordion = () => {
         <Typography sx={{
           fontFamily: "Libre Baskerville-regular",
           fontSize: "1.3rem",
+		  color: "#2E4561"
         }}>
           Pickup:
         </Typography>
@@ -264,6 +273,7 @@ const PickupAccordion = () => {
             label={<Typography sx={{
               fontFamily: "Libre Baskerville-regular",
               fontSize: "1rem",
+			  color: "#2E4561"
             }}>On Campus</Typography>}
           />
           <FormControlLabel
@@ -277,6 +287,7 @@ const PickupAccordion = () => {
             label={<Typography sx={{
               fontFamily: "Libre Baskerville-regular",
               fontSize: "1rem",
+			  color: "#2E4561"
             }}>Off Campus</Typography>}
           />
         </Box>
@@ -306,11 +317,11 @@ const Products = () => {
 
 const Filters = () => {
   return (
-    <Box sx={{ backgroundColor: "transparent", height: "100vh", width: "20vw", marginLeft: '5vw', marginRight: "2vw" }}>
-      <Typography sx={{ fontFamily: "Lato-Bold", fontSize: "3rem" }}>
-        Items
+    <Box sx={{ backgroundColor: "transparent", height: "100vh", width: "20vw", marginLeft: '5vw', marginRight: "2vw", color: "#2E4561" }}>
+      <Typography sx={{ fontFamily: "Lato-Bold", fontSize: "3rem", marginBottom: "7vh", }}>
+        Favorites
       </Typography>
-      <Typography sx={{ fontFamily: "Lato-regular", fontSize: "1.4rem", marginBottom: '0.5rem', marginTop: '1rem' }}>
+      <Typography sx={{ fontFamily: "Lato-regular", fontSize: "1.4rem", marginBottom: '0.5rem', marginTop: '1rem', }}>
         Filters
       </Typography>
 
@@ -325,6 +336,7 @@ const Filters = () => {
 export const Favorites = () => {
   return (
     <>
+		<Navbar />
       <Box display="flex" justifyContent="space-between">
         <Filters />
         <Products />
