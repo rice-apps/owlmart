@@ -1,14 +1,14 @@
 const { model, Schema } = require('mongoose');
-const Image = require('./Image.js')
+const Image = require('./Image.js').schema;
 
-const categories = {
-    CLOTHES: 0,
-    FURNITURE: 1,
-    TECHNOLOGY: 2,
-    JEWELRY: 3,
-    SERVICE: 4,
-    OTHER: 5
-}
+// const categories = {
+//     CLOTHES: 0,
+//     FURNITURE: 1,
+//     TECHNOLOGY: 2,
+//     JEWELRY: 3,
+//     SERVICE: 4,
+//     OTHER: 5
+// }
 
 const listingSchema = new Schema({
   title: { type: String, required: true },
@@ -17,10 +17,10 @@ const listingSchema = new Schema({
   active: { type: Boolean, required: true },
   pictures: [Image],
   pickup: Boolean,
-  category: categories
+  category: { type: String, enum: ['CLOTHES', 'FURNITURE', 'TECHNOLOGY', 'JEWELRY', 'SERVICE', 'OTHER']}
 });
 
 
 const Listing = model('Listing', listingSchema);
 module.exports = Listing;
-module.exports = categories;
+// module.exports = categories;

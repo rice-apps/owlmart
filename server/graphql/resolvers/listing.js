@@ -1,10 +1,10 @@
 const { AuthenticationError } = require('apollo-server');
 
-const {Listing, categories} = require('../../models/Listing');
+const {Listing} = require('../../models/Listing');
 
 module.exports = {
   Mutation: {
-    createDog: async (_, { title, description, price, active=true, pictures, pickup, category  }, context) => {
+    createDog: async (_, { title, description, price, active=true, pictures, pickup, category }, context) => {
       
         // Check for empty strings
       if (title.trim() === '') {
@@ -39,9 +39,9 @@ function isValid_Currency(str) {
 
     // returns true if the str matched the ReGex
     if (regex.test(str) == true) {
-        return "true";
+        return true;
     }
     else {
-        return "false";
+        return false;
     }
 }
