@@ -22,18 +22,27 @@ Mutation: {
         if (netID.trim() === '') {
             throw new Error('NetID must not be empty');
           }
-      
-       let vaidateEmail = new RegExp('[a-z0-9]+@rice.edu');
-
-        // Email validation
-        if(validateEmail.test(email) == false) {
-            throw new Error('Non-valid email: invalid registration credentials')
+        // Non-valid email error
+        if(!(email.LowerCase.includes('rice.edu'))) {
+            throw new Error('Non-Rice email: invalid registration credentials')
         }
+        
       
         
         const user = await newUser.save();
             
         return user;
+    },
+    deleteUser: async (_, { userId }, context) => {
+      // TODO: AUTHENTICATE BEFORE DELETING DOG
+
+      try {
+        const deletedUser = await User.findOneAndDelete({ _id: userId });
+        if (deletedUser) return 'User deleted Sucessfully';
+        else throw new Error('User does not exist');
+      } catch (err) {
+        throw new Error(err);
+      }
     },
   },
 };
