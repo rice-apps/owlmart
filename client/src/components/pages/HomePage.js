@@ -48,7 +48,7 @@ const CardComponent = ({ image, title, price, seller }) => {
           <CardMedia component="img" height="370" image={image} alt={title} />
         </Box>
         
-        <CardContent sx={{ marginBottom: '1rem' }}>
+        <CardContent sx={{ marginBottom: '1rem', color: "#141517"  }}>
           <Typography sx={{
             fontFamily: "Lato-regular",
             fontSize: "1.7rem",
@@ -113,8 +113,8 @@ const PriceSlider = () => {
         min={0}
         max={500}
       />
-      <Typography gutterBottom>Min: ${priceRange[0]}</Typography>
-      <Typography gutterBottom>Max: ${priceRange[1]}</Typography>
+      <Typography gutterBottom sx = {{color: "#2E4561"}}>Min: ${priceRange[0]}</Typography>
+      <Typography gutterBottom sx = {{color: "#2E4561"}}>Max: ${priceRange[1]}</Typography>
     </Box>
   );
 };
@@ -132,6 +132,7 @@ const PriceDropdown = () => {
         <Typography sx={{
           fontFamily: "Libre Baskerville-regular",
           fontSize: "1.3rem",
+          color: "#2E4561"
         }}>
           Price:
         </Typography>
@@ -165,6 +166,7 @@ const CategoryAccordion = () => {
         <Typography sx={{
           fontFamily: "Libre Baskerville-regular",
           fontSize: "1.3rem",
+          color: "#2E4561"
         }}>
           Category:
         </Typography>
@@ -182,6 +184,7 @@ const CategoryAccordion = () => {
             label={<Typography sx={{
               fontFamily: "Libre Baskerville-regular",
               fontSize: "1rem",
+              color: "#2E4561"
             }}>Clothing</Typography>}
           />
           <FormControlLabel
@@ -195,6 +198,7 @@ const CategoryAccordion = () => {
             label={<Typography sx={{
               fontFamily: "Libre Baskerville-regular",
               fontSize: "1rem",
+              color: "#2E4561"
             }}>Furniture</Typography>}
           />
           <FormControlLabel
@@ -221,6 +225,7 @@ const CategoryAccordion = () => {
             label={<Typography sx={{
               fontFamily: "Libre Baskerville-regular",
               fontSize: "1rem",
+              color: "#2E4561"
             }}>Other</Typography>}
           />
         </Box>
@@ -248,6 +253,7 @@ const PickupAccordion = () => {
         <Typography sx={{
           fontFamily: "Libre Baskerville-regular",
           fontSize: "1.3rem",
+          color: "#2E4561"
         }}>
           Pickup:
         </Typography>
@@ -265,6 +271,7 @@ const PickupAccordion = () => {
             label={<Typography sx={{
               fontFamily: "Libre Baskerville-regular",
               fontSize: "1rem",
+              color: "#2E4561"
             }}>On Campus</Typography>}
           />
           <FormControlLabel
@@ -278,6 +285,7 @@ const PickupAccordion = () => {
             label={<Typography sx={{
               fontFamily: "Libre Baskerville-regular",
               fontSize: "1rem",
+              color: "#2E4561"
             }}>Off Campus</Typography>}
           />
         </Box>
@@ -307,7 +315,7 @@ const Products = () => {
 
 const Filters = () => {
   return (
-    <Box sx={{ backgroundColor: "transparent", height: "100vh", width: "20vw", marginLeft: '5vw', marginRight: "2vw" }}>
+    <Box sx={{ backgroundColor: "transparent", height: "100vh", width: "20vw", marginLeft: '5vw', marginRight: "2vw", color: "#2E4561"}}>
       <Typography sx={{ fontFamily: "Lato-Bold", fontSize: "3rem" }}>
         Items
       </Typography>
