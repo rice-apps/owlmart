@@ -5,6 +5,17 @@ module.exports = gql`
     id: ID!
     name: String!
   }
+  type User {
+    id: ID!
+    netID: String!
+    firstName: String!
+    middleInitial: String
+    lastName: String!
+    password: String!
+    email: String!
+    payment: String!
+    college: String!
+  }
   type Query {
     getDogs: [Dog]
     getDog(dogId: ID!): Dog
@@ -12,20 +23,8 @@ module.exports = gql`
   type Mutation {
     createDog(name: String!): Dog!
     deleteDog(dogId: ID!): String!
-  }
-  type User {
-    id: ID!
-    netID: String!
-    firstName: String!
-    middleInitial: String!
-    lastName: String!
-    password: String!
-    email: String!
-    payment: String!
-    college: String!
-  }
-  type Mutation {
-    createUser(netID: String!, firstName: String!, middleInitial: String!, lastName: String!, password: String!, email: String!, payment: String!, college: String!): User!
+    createUser(netID: String!, firstName: String!, middleInitial: String, lastName: String!, password: String!, email: String!, payment: String!, college: String!): User!
     deleteUser(userId: ID!): String!
   }
+
 `;
