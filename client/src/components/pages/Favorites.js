@@ -46,7 +46,7 @@ const CardComponent = ({ image, title, price, seller }) => {
     }}>
       <CardActionArea>
         <Box borderRadius="10px" overflow="hidden">
-          <CardMedia component="img" height="370" image={image} alt={title} />
+          <CardMedia component="img" height="310" image={image} alt={title} />
         </Box>
         
         <CardContent sx={{ marginBottom: '1rem', color: '#141517', }}>
@@ -298,7 +298,7 @@ const PickupAccordion = () => {
 
 const Products = () => {
   return (
-    <Box display="flex" flexDirection="column" width="80vw" marginRight="2vw" marginTop="10vh" backgroundColor="transparent">
+    <Box display="flex" flexDirection="column" width="65vw" marginRight="2vw" marginTop="10vh" backgroundColor="transparent">
       <Grid container spacing={1}>
         {listingsData.map((listing) => (
           <Grid item key={listing.id} xs={12} sm={6} md={4} lg={4}>
