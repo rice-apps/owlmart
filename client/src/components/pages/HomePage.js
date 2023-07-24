@@ -16,6 +16,8 @@ import {
   FormControlLabel,
 } from '@mui/material';
 
+import { Navbar } from "./navbar";
+
 import Button from '@mui/material/Button';
 import Owl from './owl.png';
 import test from './test.png';
@@ -334,6 +336,7 @@ const Filters = () => {
 export const HomePage = () => {
   return (
     <>
+      <Navbar />
       <Box display="flex" justifyContent="space-between">
         <Filters />
         <Products />
