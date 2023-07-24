@@ -45,7 +45,7 @@ const CardComponent = ({ image, title, price, seller }) => {
     }}>
       <CardActionArea>
         <Box borderRadius="10px" overflow="hidden">
-          <CardMedia component="img" height="325" image={image} alt={title} />
+          <CardMedia component="img" height="310" image={image} alt={title} />
         </Box>
         
         <CardContent sx={{ marginBottom: '1rem', color: "#141517"  }}>
