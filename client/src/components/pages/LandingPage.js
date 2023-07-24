@@ -70,7 +70,7 @@ export const LandingPage = () => {
               lineHeight: "normal",
             }}
           >
-            Want to start Selling?
+            Want to start selling?
           </Typography>
         </TitleBox>
         <Button
