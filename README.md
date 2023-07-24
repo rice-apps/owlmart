@@ -47,7 +47,7 @@ In the future, you can skil the npm install when starting the app.
 Owlmart uses one config.js file to set environment variables for local testing, and another config.js file for server testing. Please contact the Team Leads for access to these files.
 
 # Contributing
-In order to contribute to Carpool V3, you must make all of your edits on your own development branch. To do so, create a new branch from your command line:
+In order to contribute to OwlMart, you must make all of your edits on your own development branch. To do so, create a new branch from your command line:
 
 `git checkout -b my-new-branch`
 From here, all your changes should be pushed to this branch, and not master.
