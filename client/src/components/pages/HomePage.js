@@ -1,7 +1,10 @@
+import { Navbar } from "./navbar";
+
 export const HomePage = () => {
-	return(
-		<>
-			<h1>This is the home page</h1>
-		</>
-	);
-}
+  return (
+    <>
+      <Navbar />
+      <h1>This is the home page</h1>
+    </>
+  );
+};
