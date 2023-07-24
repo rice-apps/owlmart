@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import { Button, Typography } from "@mui/material";
-import { Navbar } from "./Navbar";
+import { Navbar } from "./navbar";
 import {
   CenteredBox,
   DescriptionBox,
   TitleBox,
+  StyledButton,
 } from "./LandingStyles";
 export const LandingPage = () => {
   return (
@@ -27,25 +28,16 @@ export const LandingPage = () => {
               OWLMART
             </Typography>
           </TitleBox>
-          <Typography
-            variant="body1"
-            sx={{
-              fontFamily: "Libre Baskerville-regular",
-              fontSize: "23px", 
-             
-            }}
-          >
-            Owl Mart is a web application designed to facilitate buying and
-            selling among Rice University students. It resembles a shopping app
-            and allows students to sell various products such as furniture,
-            clothing, accessories, etc.
-          </Typography>
+          Owl Mart is a web application designed to facilitate buying and
+          selling among Rice University students. It resembles a shopping app
+          and allows students to sell various products such as furniture,
+          clothing, accessories, etc.
           <Button
             variant="contained"
             style={{
               backgroundColor: "white",
               borderRadius: "15px",
-              marginTop: "5vh",
+              marginTop: "10vh",
             }}
             component={Link}
             to="/home"
@@ -54,7 +46,7 @@ export const LandingPage = () => {
               variant="h1"
               sx={{
                 fontSize: "24px",
-                fontFamily: "Lato-bold",
+                fontFamily: "Lato",
                 color: "black",
                 fontStyle: "normal",
                 fontWeight: "20px",
@@ -66,7 +58,7 @@ export const LandingPage = () => {
             </Typography>
           </Button>
         </DescriptionBox>
-        <TitleBox style={{ marginTop: "5vh" }}>
+        <TitleBox style={{ marginTop: "10vh" }}>
           <Typography
             variant="h1"
             sx={{
@@ -78,7 +70,7 @@ export const LandingPage = () => {
               lineHeight: "normal",
             }}
           >
-            Want to start selling?
+            Want to start Selling?
           </Typography>
         </TitleBox>
         <Button
@@ -89,14 +81,12 @@ export const LandingPage = () => {
             color: "black",
             marginTop: "1vh",
             fontFamily: "Lato-bold",
-            fontSize: "24px", 
+            fontSize: "24px",
             fontStyle: "normal",
             fontWeight: "700",
             lineHeight: "normal",
             textTransform: "none",
           }}
-          component={Link}
-            to="/Signup"
         >
           Sign Up
         </Button>
