@@ -7,6 +7,7 @@ import {
   TextField,
   InputAdornment,
   IconButton,
+  
 } from "@mui/material";
 
 import { Link } from "react-router-dom";
@@ -31,6 +32,7 @@ export const Navbar = () => {
         backgroundColor: "transparent",
         boxShadow: "none",
         marginTop: ".6vh",
+        marginBottom: "3vh"
       }}
     >
       <Toolbar>
@@ -110,6 +112,7 @@ export const Navbar = () => {
               justifyContent: "space-between",
             }}
           >
+          <Link to="/favorites" style={{ textDecoration: "none" }}>
             <IconButton>
               <img
                 src={favoritesIcon}
@@ -117,6 +120,8 @@ export const Navbar = () => {
                 style={{ width: "2.2rem", height: "2rem" }}
               />
             </IconButton>
+            </Link>
+
             <IconButton>
               <img
                 src={messageIcon}
@@ -153,3 +158,5 @@ export const Navbar = () => {
     </AppBar>
   );
 };
+
+
