@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import {
   Card,
   CardContent,
@@ -23,6 +24,7 @@ import Owl from './owl.png';
 import test from './test.png';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
+
 import favoritesIcon from "../../assets/favorites-icon.svg";
 
 const listingsData = [
@@ -34,8 +36,9 @@ const listingsData = [
   { id: 6, title: '543 2', seller: 'dfgfd Doe', description: "worth an investment", price: '$50.50', image: test, pickup: 'off-campus', category: 'insert tags' },
 ];
 
-const CardComponent = ({ image, title, price, seller }) => {
+const CardComponent = ({ id, image, title, price, seller }) => {
   return (
+    <Link to={`/product/${id}`} style={{ textDecoration: 'none' }}>
     <Card sx={{
       backgroundColor: "transparent",
       maxWidth: 300,
@@ -96,6 +99,7 @@ const CardComponent = ({ image, title, price, seller }) => {
         </Box>
       </CardActionArea>
     </Card>
+    </Link>
   );
 };
 
@@ -303,6 +307,7 @@ const Products = () => {
         {listingsData.map((listing) => (
           <Grid item key={listing.id} xs={12} sm={6} md={4} lg={4}>
             <CardComponent
+              id={listing.id}
               title={listing.title}
               price={listing.price}
               image={listing.image}
@@ -314,6 +319,7 @@ const Products = () => {
     </Box>
   );
 };
+
 
 const Filters = () => {
   return (
@@ -344,3 +350,5 @@ export const HomePage = () => {
     </>
   );
 };
+
+export default HomePage;
