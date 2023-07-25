@@ -17,7 +17,7 @@ import {
   FormControlLabel,
 } from '@mui/material';
 
-import { Navbar } from "./navbar";
+import { Navbar } from "./Navbar";
 
 import Button from '@mui/material/Button';
 import Owl from './owl.png';

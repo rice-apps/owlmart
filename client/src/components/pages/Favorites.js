@@ -22,7 +22,7 @@ import Owl from './owl.png';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 import favoritesIcon from "../../assets/favorites-icon.svg";
-import { Navbar } from "./navbar";
+import { Navbar } from "./Navbar";
 
 const listingsData = [
   { id: 1, title: 'Item Name', seller: "aaron", description: "very good", price: '$100.00', image: Owl, pickup: 'on-campus', category: 'insert tags'},
@@ -306,7 +306,7 @@ const Products = () => {
         {listingsData.map((listing) => (
           <Grid item key={listing.id} xs={12} sm={6} md={4} lg={4}>
             <CardComponent
-              id={listing.id}
+              id = {listing.id}
               title={listing.title}
               price={listing.price}
               image={listing.image}
