@@ -58,6 +58,7 @@ const CardComponent = ({ id, image, title, price, seller }) => {
             fontFamily: "Lato-regular",
             fontSize: "1.7rem",
             marginBottom: '0.5rem',
+            color: "#141517",
           }}>
             {title}
           </Typography>
@@ -66,6 +67,7 @@ const CardComponent = ({ id, image, title, price, seller }) => {
             fontFamily: "Lato-bold",
             fontSize: "1.3rem",
             marginBottom: '0.5rem',
+            color: "#141517",
           }}>
             Price: {price}
           </Typography>
@@ -73,6 +75,7 @@ const CardComponent = ({ id, image, title, price, seller }) => {
           <Typography sx={{
             fontFamily: "Libre-regular",
             fontSize: "1rem",
+            color: "#141517",
           }}>
             {seller}
           </Typography>

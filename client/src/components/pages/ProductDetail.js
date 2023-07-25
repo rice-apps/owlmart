@@ -13,7 +13,7 @@ const ProductDetail = () => {
   // Assuming you have fetched the product details from your data source based on the id
   const product = {
     id: 1,
-    title: 'Product Name',
+    title: 'Cool Product',
     seller: 'John Doe',
     description: 'This is a great product.',
     price: '$100.00',
@@ -72,17 +72,10 @@ const ProductDetail = () => {
 
 
   return (
-    // <div>
-    //   <h2>{product.title}</h2>
-    //   <p>Price: {product.price}</p>
-    //   <p>Seller: {product.seller}</p>
-    //   <p>Description: {product.description}</p>
-    //   {/* Display the product image */}
-    //   <img src={product.image} alt={product.title} style={{ width: '200px', height: '200px' }} />
-    //   {/* Add any other information you want to display */}
-    // </div>
-        // {product.title}
     <>
+
+
+    
     <Navbar />
 
 
@@ -101,22 +94,42 @@ const ProductDetail = () => {
     <Box id = 'contents right of pic'>
 
      <Box id = 'first half' sx = {{display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-        <Typography>
-          Item Name
-        </Typography>
+     <Typography
+                sx={{
+                  fontSize: "2rem",
+                  fontFamily: "Lato-bold",
+                  color: "#2E4561",
+                }}
+              >
+                {product.title}
+              </Typography>
 
 
-    <Box id = '2nd row'sx = {{flexDirection: "row", display: 'flex', gap: "1rem"}}>
+    <Box id = '2nd row'sx = {{flexDirection: "row", display: 'flex', gap: "1rem", alignItems: "center", marginTop: '.5rem'}}>
         <img src={favoritesIcon} alt="favorites" style={{ width: '24px', height: '24px' }} />
         
-        <Typography>
+        <Typography sx = {{color: "#141517", fontFamily: "Libre-Baskerville-normal", fontSize: "1.3rem"}}> 
           25 favorites
         </Typography>
      </Box>
 
-      <Typography>
-        Seller
-      </Typography>
+     <Typography sx={{
+            fontFamily: "Lato-bold",
+            fontSize: "1rem",
+            marginTop: '.5rem',
+            color: "#141517",
+          }}>
+            {product.price}
+          </Typography>
+  
+          <Typography sx={{
+            fontFamily: "Libre-regular",
+            fontSize: "1rem",
+            marginTop: ".5rem",
+            color: "#141517"
+          }}>
+            {product.seller}
+          </Typography>
 
       <Button variant="contained" sx={{
             color: '#141517',
@@ -124,41 +137,45 @@ const ProductDetail = () => {
             fontFamily: "Lato-regular",
             fontSize: "1.1rem",
             textTransform: 'none',
-            width: "10rem"
+            width: "15rem",
+            marginTop: '.5rem',
+            borderRadius: '.5rem',
+            border: '1px solid #2E4561',
+            padding: ".2rem",
           }}>
             Contact Seller
           </Button>
         </Box>
 
         <Box id = 'description (2nd half)' sx = {{marginTop: "2rem", flexDirection: "Column"}}>
-          <Typography>
+          <Typography sx = {{color: "#2E4561", fontSize: "1.7rem", fontFamily: "Lato-bold"}}>
             Description
           </Typography>
-          <Box sx = {{flexDirection: "row", display: "flex", marginTop: "1rem"}}>
-          <Box id = "labels" sx = {{flexDirection: "column", display: "flex"}}>
-            <Typography>
-              Category
-            </Typography>
 
-            <Typography>
-              Category
-            </Typography>
+
+          <Box sx={{ flexDirection: "row", display: "flex", marginTop: "1rem" }}>
+            <Box id="labels" sx={{ flexDirection: "column", display: "flex", color: "#2E4561",  }}>
+              <Typography sx={{ fontSize: "1.3rem",  fontFamily: "Lato-bold" }}>
+                Category:
+              </Typography>
+
+              <Typography sx={{ fontSize: "1.3rem", marginTop: "1rem",  fontFamily: "Lato-bold"}}>
+                Pickup:
+              </Typography>
             </Box>
 
-            <Box id = "label contents" sx = {{marginLeft: "2rem"}}>
-              <Typography>
+            <Box id="label contents" sx={{ marginLeft: "2rem", color: "#141517"}}>
+              <Typography sx={{ fontSize: "1.3rem" , fontFamily: "Libre Baskerville-normal"}}>
                 Other
               </Typography>
 
-              <Typography>
+              <Typography sx={{ fontSize: "1.3rem", marginTop: "1rem", fontFamily: "Libre Baskerville-normal" }}>
                 On-Campus
               </Typography>
-              </Box>
-              
-
             </Box>
-            
-            <Typography sx = {{marginTop: "1rem", width: "45rem"}}>
+          </Box>
+
+            <Typography sx = {{marginTop: "1rem", width: "45rem", marginTop: "1.3rem", color: "#141517", fontFamily: "Libre Baskerville-normal", fontSize: "1.1rem", lineHeight: '1.3'}}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
             magna aliqua. A pellentesque sit amet porttitor eget dolor morbi. Ac placerat vestibulum lectus mauris ultrices
              eros in cursus. Tempor nec feugiat nisl pretium fusce id. In hac habitasse platea dictumst vestibulum rhoncus est pellentesque. 
