@@ -306,6 +306,7 @@ const Products = () => {
         {listingsData.map((listing) => (
           <Grid item key={listing.id} xs={12} sm={6} md={4} lg={4}>
             <CardComponent
+              id={listing.id}
               title={listing.title}
               price={listing.price}
               image={listing.image}
