@@ -1,13 +1,7 @@
 const { AuthenticationError } = require('apollo-server');
 const User = require('../../models/User');
 const bcrypt = require('bcrypt');
-//const { MONGODB } = require('../../../config');
-//var MongoClient = require("mongodb").MongoClient;
-//var url = MONGODB
 
-module.exports = {
-
-  
 //Email validation
 function ValidateEmail(inputText) 
 {
@@ -20,6 +14,7 @@ function ValidateEmail(inputText)
 }
 module.exports = {
 
+  
 Mutation: {
     createUser: async (_, { netID, firstName, middleInitital, lastName, password, email, payment, college }, context) => {
         
@@ -36,9 +31,11 @@ Mutation: {
         if (netID.trim() === '') {
             throw new Error('NetID must not be empty');
           }
+      
+       let vaidateEmail = new RegExp('[a-z0-9]+@rice.edu');
 
-        // Non-valid email error
-        if(( ValidateEmail(email) == false && email.includes('@rice.edu')) == false) {
+        // Email validation
+        if(validateEmail.test(email) == false) {
             throw new Error('Non-valid email: invalid registration credentials')
         }
         
