@@ -42,7 +42,6 @@ Mutation: {
         return user;
     },
     deleteUser: async (_, { userId }, context) => {
-      // TODO: AUTHENTICATE BEFORE DELETING DOG
 
       try {
         const deletedUser = await User.findOneAndDelete({ _id: userId });
