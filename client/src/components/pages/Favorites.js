@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import {
   Card,
   CardContent,
@@ -32,8 +33,9 @@ const listingsData = [
   { id: 6, title: '543 2', seller: 'dfgfd Doe', description: "worth an investment", price: '$50.50', image: Owl, pickup: 'off-campus', category: 'insert tags' },
 ];
 
-const CardComponent = ({ image, title, price, seller }) => {
+const CardComponent = ({ id, image, title, price, seller }) => {
   return (
+    <Link to={`/product/${id}`} style={{ textDecoration: 'none' }}>
     <Card sx={{
       backgroundColor: "transparent",
       maxWidth: 300,
@@ -95,6 +97,7 @@ const CardComponent = ({ image, title, price, seller }) => {
         </Box>
       </CardActionArea>
     </Card>
+    </Link>
   );
 };
 
