@@ -23,52 +23,7 @@ const ProductDetail = () => {
   };
 
 
-//   const productsData = [
-//     { id: 1, title: 'Product 1', seller: 'Seller 1', price: '$100', image: 'product1.jpg' },
-//     { id: 2, title: 'Product 2', seller: 'Seller 2', price: '$50', image: 'product2.jpg' },
-//     { id: 3, title: 'Product 3', seller: 'Seller 3', price: '$75', image: 'product3.jpg' },
-//     // Add more products here
-//   ];
-  
-//   export default productsData;
 
-//   import React from 'react';
-// import { useParams } from 'react-router-dom';
-// import productsData from './productsData'; // Import the productsData array
-
-// // Function to fetch product details based on the product ID
-// const fetchProductDetails = (productId) => {
-//   // Simulate fetching the data from the data array
-//   // In a real application, you would fetch data from an API or backend server
-//   const product = productsData.find((item) => item.id === parseInt(productId, 10));
-//   return product;
-// };
-
-// const ProductDetail = () => {
-//   const { id } = useParams();
-
-//   // Fetch the product details using the fetchProductDetails function
-//   const product = fetchProductDetails(id);
-
-//   if (!product) {
-//     // Handle the case when the product with the given ID is not found
-//     return <div>Product not found</div>;
-//   }
-
-//   return (
-//     <div>
-//       <h2>{product.title}</h2>
-//       <p>Price: {product.price}</p>
-//       <p>Seller: {product.seller}</p>
-//       <p>Description: {product.description}</p>
-//       {/* Display the product image */}
-//       <img src={product.image} alt={product.title} style={{ width: '200px', height: '200px' }} />
-//       {/* Add any other information you want to display */}
-//     </div>
-//   );
-// };
-
-// export default ProductDetail;
 
 
   return (
@@ -79,7 +34,7 @@ const ProductDetail = () => {
 <Navbar />
 
 <Box
-  id="wrapper"
+  id="product wrapper (top half page)"
   sx={{
     display: 'flex',
     justifyContent: 'row',
@@ -88,15 +43,17 @@ const ProductDetail = () => {
     marginTop: '4rem',
   }}
 >
-  <img
-    src={OwlImg}
-    alt={product.title}
-    style={{
-      width: '17rem',
-      height: '22rem',
-      border: '2px solid black', // Add black border here
-    }}
-  />
+  <Box>
+    <img
+      src={OwlImg}
+      alt={product.title}
+      style={{
+        width: '17rem',
+        height: '22rem',
+        border: '2px solid black', // Add black border here
+      }}
+    />
+  </Box>
 
   <Box id="contents right of pic">
     <Box
@@ -190,13 +147,13 @@ const ProductDetail = () => {
         Description
       </Typography>
 
-      <Box sx={{ flexDirection: 'row', display: 'flex', marginTop: '1rem' }}>
+      <Box id = 'wrapper for bottom half' sx={{ flexDirection: 'row', display: 'flex', marginTop: '.5rem', alignItems: "center"}}>
         <Box id="labels" sx={{ flexDirection: 'column', display: 'flex', color: '#2E4561' }}>
           <Typography sx={{ fontSize: '1.3rem', fontFamily: 'Lato-bold' }}>
             Category:
           </Typography>
 
-          <Typography sx={{ fontSize: '1.3rem', marginTop: '1rem', fontFamily: 'Lato-bold' }}>
+          <Typography sx={{ fontSize: '1.3rem', marginTop: '.5rem', fontFamily: 'Lato-bold' }}>
             Pickup:
           </Typography>
         </Box>
@@ -206,7 +163,7 @@ const ProductDetail = () => {
             Other
           </Typography>
 
-          <Typography sx={{ fontSize: '1.3rem', marginTop: '1rem', fontFamily: 'Libre Baskerville-normal' }}>
+          <Typography sx={{ fontSize: '1.3rem', marginTop: '.5rem', fontFamily: 'Libre Baskerville-normal' }}>
             On-Campus
           </Typography>
         </Box>
@@ -215,7 +172,7 @@ const ProductDetail = () => {
       <Typography
         sx={{
           width: '45rem',
-          marginTop: '1.3rem',
+          marginTop: '.5rem',
           color: '#141517',
           fontFamily: 'Libre Baskerville-normal',
           fontSize: '1.1rem',
@@ -226,6 +183,12 @@ const ProductDetail = () => {
       </Typography>
     </Box>
   </Box>
+</Box>
+
+
+
+<Box id = "seller's other listings wrapper">
+  t
 </Box>
 </>
   );
