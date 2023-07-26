@@ -60,7 +60,7 @@ const Item = ({ item }) => {
             <Box id ='product title'>
               <Typography
                 sx={{
-                  fontFamily: 'Lato-bold',
+                  fontFamily: 'Lato-normal',
                   fontSize: '1rem',
                   color: '#141517',
                 }}
@@ -75,6 +75,7 @@ const Item = ({ item }) => {
                     fontFamily: 'Lato-bold',
                     fontSize: '1rem',
                     color: '#141517',
+                    
                   }}
                 >
                   {item.price}
