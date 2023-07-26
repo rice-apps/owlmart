@@ -3,6 +3,7 @@ import { Box, Typography, Button } from '@mui/material';
 import { Navbar } from './Navbar.js';
 import Owl from './owl.png';
 import { useParams } from 'react-router-dom';
+import { Carousel, Paper } from 'react-material-ui-carousel';
 
 
 import favoritesIcon from "../../assets/favorites-icon.svg";
@@ -18,12 +19,30 @@ const Products = [
   { id: 6, title: '543 2', seller: 'dfgfd Doe', description: "worth an investment", price: '$50.50', image: Owl, pickup: 'off-campus', category: 'insert tags' },
 ];
 
+const Item = ({ item }) => {
+  return (
+    <Paper>
+      <img
+        src={item.image}
+        alt={item.title}
+        style={{
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+        }}
+      />
+      <Typography>{item.title}</Typography>
+      {/* Add more information or caption here */}
+    </Paper>
+  );
+};
+
+
 const ProductDetail = () => {
   const { id } = useParams();
 
   // Find the product with the current 'id' from the 'products' array
   const product = Products.find((product) => product.id === parseInt(id));
-
 
   return (
     <>
@@ -183,19 +202,26 @@ const ProductDetail = () => {
 
 
 
-<Box id = "seller's other listings wrapper">
-  <Typography
-    sx={{
-      fontSize: "2rem",
-      fontFamily: "Lato-bold",
-      color: "#2E4561",
-      marginTop: "5rem",
-      marginLeft: '10vw',
-    }}
-  >
-    {product.seller}'s Other Listings
-  </Typography>
-</Box>
+<Box id="seller's other listings wrapper">
+        <Typography
+          sx={{
+            fontSize: "2rem",
+            fontFamily: "Lato-bold",
+            color: "#2E4561",
+            marginTop: "5rem",
+            marginLeft: '10vw',
+          }}
+        >
+          {product.seller}'s Other Listings
+        </Typography>
+
+
+        <Carousel>
+            {
+                Products.map( (item, i) => <Item key={i} item={item} /> )
+            }
+        </Carousel>
+      </Box>
 </>
   );
 };
