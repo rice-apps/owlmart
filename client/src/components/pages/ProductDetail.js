@@ -1,26 +1,17 @@
 import React from 'react';
-import { Box, Typography, Button } from '@mui/material';
+import { Box, Typography, Button, Paper} from '@mui/material';
 import { Navbar }from './Navbar.js';
 import Owl from './owl.png';
 import { useParams } from 'react-router-dom';
 import Carousel from 'react-material-ui-carousel';
-
-import Paper from '@mui/material/Paper';
+import { Link } from 'react-router-dom';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 import favoritesIcon from "../../assets/favorites-icon.svg";
 
-//import { useParams } from 'react-router-dom';
+import Products from './AllProducts.js';
 
-const Products = [
-  { id: 1, title: 'Item Name', seller: "aaron", description: "very good", price: '$100.00', image: Owl, pickup: 'on-campus', category: 'insert tags'},
-  { id: 2, title: 'Item saf 2', seller: 'aaron', description: "worth an investment", price: '$50.50', image: Owl, pickup: 'off-campus', category: 'insert tags' },
-  { id: 3, title: 'dsfa 2', seller: 'aaron', description: "worth an investment", price: '$50.50', image: Owl, pickup: 'off-campus', category: 'insert tags' },
-  { id: 4, title: 'bdfb Name 2', seller: 'aaron', description: "worth an investment", price: '$50.50', image: Owl, pickup: 'off-campus', category: 'insert tags' },
-  { id: 5, title: '3242 Name 2', seller: 'dfsdfsd sdf', description: "worth an investment", price: '$50.50', image: Owl, pickup: 'off-campus', category: 'insert tags' },
-  { id: 6, title: '543 2', seller: 'dfgfd Doe', description: "worth an investment", price: '$50.50', image: Owl, pickup: 'off-campus', category: 'insert tags' },
-];
 
 const groupByEveryN = (array, n) => {
   let result = [];
@@ -33,32 +24,47 @@ const groupByEveryN = (array, n) => {
 const groupedProducts = groupByEveryN(Products, 3);
 
 const Item = ({ item }) => {
-  return (
-    <Paper style={{ maxWidth: '20%', boxSizing: 'border-box', padding: '1rem', margin: '1rem' }}>
-      <Box display="flex">
-        <img
-          src={item.image}
-          alt={item.title}
-          style={{
-            width: '60%',
-            height: '100%',
-            objectFit: 'cover',
-            marginRight: '10%',
-          }}
-        />
-        <Box display="flex" flexDirection="column" justifyContent="center">
-          <Typography>{item.title}</Typography>
-          <Typography>{item.price}</Typography>
-          <img
-            src={favoritesIcon}
-            alt="favorites"
-            style={{ width: '24px', height: '24px' }}
-          />
-        </Box>
-      </Box>
-    </Paper>
-  );
-};
+    return (
+      <Link to={`/product/${item.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+      <Paper style={{ width: "auto", height: "auto", padding: '1rem', margin: '1rem' }}>
+  <Box display="flex">
+    <Box 
+      display="flex" 
+      alignItems="center" 
+      justifyContent="center"
+      style={{
+        width: 'auto', // increase the width
+        height: 'auto', // set height to auto
+        marginRight: '5%', // decrease the marginRight
+        border: '1px solid #2E4561',
+      }}
+    >
+      <img
+        src={item.image}
+        alt={item.title}
+        style={{
+          width: 'auto',
+          height: '10vh', // set height to auto
+          objectFit: 'cover',
+        }}
+      />
+    </Box>
+    <Box display="flex" flexDirection="column" justifyContent="center">
+      <Typography>{item.title}</Typography>
+      <Typography>{item.price}</Typography>
+      <img
+        src={favoritesIcon}
+        alt="favorites"
+        style={{ width: '24px', height: '24px' }}
+      />
+    </Box>
+  </Box>
+</Paper>
+
+      </Link>
+    );
+  };
+  
 
 
 
