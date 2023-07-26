@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography, Button, Paper} from '@mui/material';
+import { Box, Typography, Button, Paper, ButtonBase} from '@mui/material';
 import { Navbar }from './Navbar.js';
 import Owl from './owl.png';
 import { useParams } from 'react-router-dom';
@@ -25,8 +25,8 @@ const groupedProducts = groupByEveryN(Products, 3);
 
 const Item = ({ item }) => {
     return (
-      <Link to={`/product/${item.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-      <Paper style={{ width: "auto", height: "auto", padding: '1rem', margin: '1rem' }}>
+      <ButtonBase component={Link} to={`/product/${item.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+  <Paper style={{ width: "auto", height: "auto", padding: '1rem', margin: '1rem' }}>
   <Box display="flex">
     <Box 
       display="flex" 
@@ -35,7 +35,7 @@ const Item = ({ item }) => {
       style={{
         width: 'auto', // increase the width
         height: 'auto', // set height to auto
-        marginRight: '5%', // decrease the marginRight
+        marginRight: '10%', // decrease the marginRight
         border: '1px solid #2E4561',
       }}
     >
@@ -43,13 +43,13 @@ const Item = ({ item }) => {
         src={item.image}
         alt={item.title}
         style={{
-          width: 'auto',
-          height: '10vh', // set height to auto
+          width: '170px',
+          height: '210px', // set height to auto
           objectFit: 'cover',
         }}
       />
     </Box>
-    <Box display="flex" flexDirection="column" justifyContent="center">
+    <Box display="flex" flexDirection="column" justifyContent="center" paddingRight= "50px">
       <Typography>{item.title}</Typography>
       <Typography>{item.price}</Typography>
       <img
@@ -59,9 +59,8 @@ const Item = ({ item }) => {
       />
     </Box>
   </Box>
-</Paper>
-
-      </Link>
+  </Paper>
+</ButtonBase>
     );
   };
   
