@@ -1,15 +1,14 @@
 import React from 'react';
-import { Box, Typography, Button, Paper, ButtonBase} from '@mui/material';
-import { Navbar }from './Navbar.js';
-import Owl from './owl.png';
+import { Box, Typography, Button, Paper, ButtonBase } from '@mui/material';
 import { useParams } from 'react-router-dom';
-import Carousel from 'react-material-ui-carousel';
 import { Link } from 'react-router-dom';
-import ArrowNext from "../../assets/next-arrow.svg";
+import Carousel from 'react-material-ui-carousel';
 
-import favoritesIcon from "../../assets/favorites-icon.svg";
-
+import { Navbar } from './Navbar.js';
 import Products from './AllProducts.js';
+
+import ArrowNext from "../../assets/next-arrow.svg";
+import favoritesIcon from "../../assets/favorites-icon.svg";
 
 
 const groupByEveryN = (array, n) => {
@@ -19,8 +18,6 @@ const groupByEveryN = (array, n) => {
   }
   return result;
 };
-
-const groupedProducts = groupByEveryN(Products, 3);
 
 const Item = ({ item }) => {
   return (
@@ -281,31 +278,30 @@ const ProductDetail = () => {
 
 
         <Carousel
-  navButtonsAlwaysVisible
-  navButtonsProps={{ 
-    style: { 
-      backgroundColor: 'transparent', 
-      borderRadius: 0,
-      color: 'black',
-    } 
-  }}
-  NextIcon={<img src={ArrowNext} alt="Next" />}
-  PrevIcon={<></>} // No prev button
-  interval={5000}
-  animation="slide"
-  fullHeightHover={false}
->
-  {groupedProducts.map((group, index) => (
-    <Box key={index} display="flex" justifyContent="center">
-      {group.map((item) => (
-        <Item key={item.id} item={item} />
-      ))}
-    </Box>
-  ))}
-</Carousel>
-
+          navButtonsAlwaysVisible
+          navButtonsProps={{ 
+            style: { 
+              backgroundColor: 'transparent', 
+              borderRadius: 0,
+              color: 'black',
+            } 
+          }}
+          NextIcon={<img src={ArrowNext} alt="Next" />}
+          PrevIcon={<></>} // No prev button
+          interval={5000}
+          animation="slide"
+          fullHeightHover={false}
+        >
+          {groupedProducts.map((group, index) => (
+            <Box key={index} display="flex" justifyContent="center">
+              {group.map((item) => (
+                <Item key={item.id} item={item} />
+              ))}
+            </Box>
+          ))}
+        </Carousel>
       </Box>
-</>
+    </>
   );
 };
 

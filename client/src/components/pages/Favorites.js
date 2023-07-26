@@ -18,7 +18,6 @@ import {
 } from '@mui/material';
 
 import Button from '@mui/material/Button';
-import Owl from './owl.png';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 import favoritesIcon from "../../assets/favorites-icon.svg";
