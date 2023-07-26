@@ -317,7 +317,7 @@ const Products = () => {
 const Filters = () => {
   return (
     <Box sx={{ backgroundColor: "transparent", height: "100vh", width: "20vw", marginLeft: '5vw', marginRight: "2vw", color: "#2E4561"}}>
-      <Typography sx={{ fontFamily: "Lato-Bold", fontSize: "3rem" }}>
+      <Typography sx={{ fontFamily: "Lato-Bold", fontSize: "3rem" , marginBottom: "7vh",}}>
         Items
       </Typography>
       <Typography sx={{ fontFamily: "Lato-regular", fontSize: "1.4rem", marginBottom: '0.5rem', marginTop: '1rem' }}>
