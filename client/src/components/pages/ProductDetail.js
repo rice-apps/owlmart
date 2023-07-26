@@ -250,7 +250,7 @@ const ProductDetail = () => {
       <Typography
         sx={{
           width: '45rem',
-          marginTop: '.5rem',
+          marginTop: '1rem',
           color: '#141517',
           fontFamily: 'Libre Baskerville-normal',
           fontSize: '1.1rem',
