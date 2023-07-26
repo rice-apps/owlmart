@@ -21,16 +21,8 @@ const ProductDetail = () => {
     pickup: 'on-campus',
     category: 'insert tags',
   };
-
-
-
-
-
   return (
     <>
-
-
-    
 <Navbar />
 
 <Box
@@ -43,7 +35,7 @@ const ProductDetail = () => {
     marginTop: '4rem',
   }}
 >
-  <Box>
+
     <img
       src={OwlImg}
       alt={product.title}
@@ -53,7 +45,7 @@ const ProductDetail = () => {
         border: '2px solid black', // Add black border here
       }}
     />
-  </Box>
+
 
   <Box id="contents right of pic">
     <Box
@@ -188,7 +180,17 @@ const ProductDetail = () => {
 
 
 <Box id = "seller's other listings wrapper">
-  t
+  <Typography
+    sx={{
+      fontSize: "2rem",
+      fontFamily: "Lato-bold",
+      color: "#2E4561",
+      marginTop: "5rem",
+      marginLeft: '10vw',
+    }}
+  >
+    {product.seller}'s Other Listings
+  </Typography>
 </Box>
 </>
   );
