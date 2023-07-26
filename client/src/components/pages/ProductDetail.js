@@ -22,48 +22,77 @@ const groupByEveryN = (array, n) => {
 };
 
 const groupedProducts = groupByEveryN(Products, 3);
-
 const Item = ({ item }) => {
-    return (
-      <ButtonBase component={Link} to={`/product/${item.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-  <Paper style={{ width: "auto", height: "auto", padding: '1rem', margin: '1rem' }}>
-  <Box display="flex">
-    <Box 
-      display="flex" 
-      alignItems="center" 
-      justifyContent="center"
-      style={{
-        width: 'auto',
-        height: 'auto', 
-        marginRight: '10%', 
-        border: '1px solid #2E4561',
-      }}
-    >
-      <img
-        src={item.image}
-        alt={item.title}
-        style={{
-          width: '170px',
-          height: '210px',
-          objectFit: 'cover',
-        }}
-      />
-    </Box>
-    <Box display="flex" flexDirection="column" justifyContent="center" paddingRight= "50px">
-      <Typography>{item.title}</Typography>
-      <Typography>{item.price}</Typography>
-      <img
-        src={favoritesIcon}
-        alt="favorites"
-        style={{ width: '24px', height: '24px' }}
-      />
-    </Box>
-  </Box>
-  </Paper>
-</ButtonBase>
-    );
-  };
-  
+  return (
+    <ButtonBase component={Link} to={`/product/${item.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+      <Paper style={{ width: "auto", height: "auto", padding: '1rem', margin: '1rem', marginLeft: "5rem", marginRight: "2rem" }}>
+        <Box id = 'wrapper' display="flex" alignItems="strectch">
+          <Box id = 'image'
+            display="flex" 
+            alignItems="center" 
+            justifyContent="center"
+            flexDirection="row"
+            style={{
+              width: 'auto',
+              height: 'auto', 
+              marginRight: '10%', 
+              border: '1px solid #2E4561',
+            }}
+          >
+            <img
+              src={item.image}
+              alt={item.title}
+              style={{
+                width: '170px',
+                height: '210px',
+                objectFit: 'cover',
+              }}
+            />
+          </Box>
+
+          <Box 
+            display="flex" 
+            flexDirection="column" 
+            justifyContent="space-between" 
+            paddingRight= "50px"
+            flexGrow={1} 
+          >
+            <Box id ='product title'>
+              <Typography
+                sx={{
+                  fontFamily: 'Lato-bold',
+                  fontSize: '1rem',
+                  color: '#141517',
+                }}
+              >
+                {item.title}
+              </Typography>
+            </Box>
+
+            <Box id = 'bottom content' flexDirection="column" display='flex' justifyContent='flex-end'>
+              <Typography
+                  sx={{
+                    fontFamily: 'Lato-bold',
+                    fontSize: '1rem',
+                    color: '#141517',
+                  }}
+                >
+                  {item.price}
+                </Typography>
+
+                <img
+                  src={favoritesIcon}
+                  alt="favorites"
+                  style={{ width: '24px', height: '24px' }}
+                />
+            </Box>
+          </Box>
+        </Box>
+      </Paper>
+    </ButtonBase>
+  );
+};
+
 
 
 
@@ -71,7 +100,7 @@ const ProductDetail = () => {
   const { id } = useParams();
   const product = Products.find((product) => product.id === parseInt(id));
 
-  // Filter out all products that are from the same seller
+  // Filter out all products that are from the same seller that isn't current item
   const sameSellerProducts = Products.filter((prod) => prod.seller === product.seller && prod.id !== product.id);
 
 
@@ -257,7 +286,7 @@ const ProductDetail = () => {
           backgroundColor: 'transparent', 
           borderRadius: 0,
           color: 'black',
-          marginRight: '10px',
+          marginRight: '5rem',
           marginLeft: '10px'
         } 
       }}
