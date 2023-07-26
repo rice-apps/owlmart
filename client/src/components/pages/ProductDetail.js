@@ -1,10 +1,13 @@
 import React from 'react';
 import { Box, Typography, Button } from '@mui/material';
-import { Navbar } from './Navbar.js';
+import { Navbar }from './Navbar.js';
 import Owl from './owl.png';
 import { useParams } from 'react-router-dom';
-import { Carousel, Paper } from 'react-material-ui-carousel';
+import Carousel from 'react-material-ui-carousel';
 
+import Paper from '@mui/material/Paper';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 import favoritesIcon from "../../assets/favorites-icon.svg";
 
@@ -12,39 +15,64 @@ import favoritesIcon from "../../assets/favorites-icon.svg";
 
 const Products = [
   { id: 1, title: 'Item Name', seller: "aaron", description: "very good", price: '$100.00', image: Owl, pickup: 'on-campus', category: 'insert tags'},
-  { id: 2, title: 'Item saf 2', seller: 'dsf', description: "worth an investment", price: '$50.50', image: Owl, pickup: 'off-campus', category: 'insert tags' },
-  { id: 3, title: 'dsfa 2', seller: 'sdf', description: "worth an investment", price: '$50.50', image: Owl, pickup: 'off-campus', category: 'insert tags' },
-  { id: 4, title: 'bdfb Name 2', seller: 'John sdf', description: "worth an investment", price: '$50.50', image: Owl, pickup: 'off-campus', category: 'insert tags' },
+  { id: 2, title: 'Item saf 2', seller: 'aaron', description: "worth an investment", price: '$50.50', image: Owl, pickup: 'off-campus', category: 'insert tags' },
+  { id: 3, title: 'dsfa 2', seller: 'aaron', description: "worth an investment", price: '$50.50', image: Owl, pickup: 'off-campus', category: 'insert tags' },
+  { id: 4, title: 'bdfb Name 2', seller: 'aaron', description: "worth an investment", price: '$50.50', image: Owl, pickup: 'off-campus', category: 'insert tags' },
   { id: 5, title: '3242 Name 2', seller: 'dfsdfsd sdf', description: "worth an investment", price: '$50.50', image: Owl, pickup: 'off-campus', category: 'insert tags' },
   { id: 6, title: '543 2', seller: 'dfgfd Doe', description: "worth an investment", price: '$50.50', image: Owl, pickup: 'off-campus', category: 'insert tags' },
 ];
 
+const groupByEveryN = (array, n) => {
+  let result = [];
+  for (let i = 0; i < array.length; i += n) {
+    result.push(array.slice(i, i + n));
+  }
+  return result;
+};
+
+const groupedProducts = groupByEveryN(Products, 3);
+
 const Item = ({ item }) => {
   return (
-    <Paper>
-      <img
-        src={item.image}
-        alt={item.title}
-        style={{
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-        }}
-      />
-      <Typography>{item.title}</Typography>
-      {/* Add more information or caption here */}
+    <Paper style={{ maxWidth: '20%', boxSizing: 'border-box', padding: '1rem', margin: '1rem' }}>
+      <Box display="flex">
+        <img
+          src={item.image}
+          alt={item.title}
+          style={{
+            width: '60%',
+            height: '100%',
+            objectFit: 'cover',
+            marginRight: '10%',
+          }}
+        />
+        <Box display="flex" flexDirection="column" justifyContent="center">
+          <Typography>{item.title}</Typography>
+          <Typography>{item.price}</Typography>
+          <img
+            src={favoritesIcon}
+            alt="favorites"
+            style={{ width: '24px', height: '24px' }}
+          />
+        </Box>
+      </Box>
     </Paper>
   );
 };
 
 
+
 const ProductDetail = () => {
   const { id } = useParams();
-
-  // Find the product with the current 'id' from the 'products' array
   const product = Products.find((product) => product.id === parseInt(id));
 
+  // Filter out all products that are from the same seller
+  const sameSellerProducts = Products.filter((prod) => prod.seller === product.seller);
+
+  const groupedProducts = groupByEveryN(sameSellerProducts, 3);
+
   return (
+
     <>
 <Navbar />
 
@@ -216,11 +244,31 @@ const ProductDetail = () => {
         </Typography>
 
 
-        <Carousel>
-            {
-                Products.map( (item, i) => <Item key={i} item={item} /> )
-            }
-        </Carousel>
+        <Carousel
+      navButtonsAlwaysVisible
+      navButtonsProps={{ 
+        style: { 
+          backgroundColor: 'transparent', 
+          borderRadius: 0,
+          color: 'black',
+          marginRight: '10px',
+          marginLeft: '10px'
+        } 
+      }}
+      NextIcon={<ArrowForwardIosIcon />}
+      PrevIcon={<ArrowBackIosIcon />}
+      interval={5000}
+      animation="slide"
+      fullHeightHover={false}
+    >
+      {groupedProducts.map((group, index) => (
+        <Box key={index} display="flex" justifyContent="center">
+          {group.map((item) => (
+            <Item key={item.id} item={item} />
+          ))}
+        </Box>
+      ))}
+    </Carousel>
       </Box>
 </>
   );
