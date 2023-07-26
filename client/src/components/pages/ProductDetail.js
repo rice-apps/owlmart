@@ -1,26 +1,30 @@
 import React from 'react';
 import { Box, Typography, Button } from '@mui/material';
 import { Navbar } from './Navbar.js';
-import OwlImg from './owl.png';
+import Owl from './owl.png';
+import { useParams } from 'react-router-dom';
+
 
 import favoritesIcon from "../../assets/favorites-icon.svg";
 
 //import { useParams } from 'react-router-dom';
 
-const ProductDetail = () => {
- // const { id } = useParams();
+const Products = [
+  { id: 1, title: 'Item Name', seller: "aaron", description: "very good", price: '$100.00', image: Owl, pickup: 'on-campus', category: 'insert tags'},
+  { id: 2, title: 'Item saf 2', seller: 'dsf', description: "worth an investment", price: '$50.50', image: Owl, pickup: 'off-campus', category: 'insert tags' },
+  { id: 3, title: 'dsfa 2', seller: 'sdf', description: "worth an investment", price: '$50.50', image: Owl, pickup: 'off-campus', category: 'insert tags' },
+  { id: 4, title: 'bdfb Name 2', seller: 'John sdf', description: "worth an investment", price: '$50.50', image: Owl, pickup: 'off-campus', category: 'insert tags' },
+  { id: 5, title: '3242 Name 2', seller: 'dfsdfsd sdf', description: "worth an investment", price: '$50.50', image: Owl, pickup: 'off-campus', category: 'insert tags' },
+  { id: 6, title: '543 2', seller: 'dfgfd Doe', description: "worth an investment", price: '$50.50', image: Owl, pickup: 'off-campus', category: 'insert tags' },
+];
 
-  // Assuming you have fetched the product details from your data source based on the id
-  const product = {
-    id: 1,
-    title: 'Cool Product',
-    seller: 'John Doe',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A pellentesque sit amet porttitor eget dolor morbi. Ac placerat vestibulum lectus mauris ultrices eros in cursus. Tempor nec feugiat nisl pretium fusce id. In hac habitasse platea dictumst vestibulum rhoncus est pellentesque. Tincidunt lobortis feugiat vivamus at augue eget arcu dictum. Viverra suspendisse potenti nullam ac tortor vitae. .',
-    price: '$100.00',
-    image: 'owl.png', // Replace 'product_image.jpg' with the URL or path to the product image
-    pickup: 'on-campus',
-    category: 'insert tags',
-  };
+const ProductDetail = () => {
+  const { id } = useParams();
+
+  // Find the product with the current 'id' from the 'products' array
+  const product = Products.find((product) => product.id === parseInt(id));
+
+
   return (
     <>
 <Navbar />
@@ -37,7 +41,7 @@ const ProductDetail = () => {
 >
 
     <img
-      src={OwlImg}
+      src={Owl}
       alt={product.title}
       style={{
         width: '17rem',
