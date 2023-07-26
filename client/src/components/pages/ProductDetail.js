@@ -33,9 +33,9 @@ const Item = ({ item }) => {
       alignItems="center" 
       justifyContent="center"
       style={{
-        width: 'auto', // increase the width
-        height: 'auto', // set height to auto
-        marginRight: '10%', // decrease the marginRight
+        width: 'auto',
+        height: 'auto', 
+        marginRight: '10%', 
         border: '1px solid #2E4561',
       }}
     >
@@ -44,7 +44,7 @@ const Item = ({ item }) => {
         alt={item.title}
         style={{
           width: '170px',
-          height: '210px', // set height to auto
+          height: '210px',
           objectFit: 'cover',
         }}
       />
@@ -72,7 +72,8 @@ const ProductDetail = () => {
   const product = Products.find((product) => product.id === parseInt(id));
 
   // Filter out all products that are from the same seller
-  const sameSellerProducts = Products.filter((prod) => prod.seller === product.seller);
+  const sameSellerProducts = Products.filter((prod) => prod.seller === product.seller && prod.id !== product.id);
+
 
   const groupedProducts = groupByEveryN(sameSellerProducts, 3);
 
@@ -93,12 +94,12 @@ const ProductDetail = () => {
 >
 
     <img
-      src={Owl}
+      src={product.image}
       alt={product.title}
       style={{
         width: '17rem',
         height: '22rem',
-        border: '2px solid black', // Add black border here
+        border: '2px solid black',
       }}
     />
 
