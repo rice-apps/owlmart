@@ -5,8 +5,7 @@ import Owl from './owl.png';
 import { useParams } from 'react-router-dom';
 import Carousel from 'react-material-ui-carousel';
 import { Link } from 'react-router-dom';
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import ArrowNext from "../../assets/next-arrow.svg";
 
 import favoritesIcon from "../../assets/favorites-icon.svg";
 
@@ -22,10 +21,11 @@ const groupByEveryN = (array, n) => {
 };
 
 const groupedProducts = groupByEveryN(Products, 3);
+
 const Item = ({ item }) => {
   return (
     <ButtonBase component={Link} to={`/product/${item.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-      <Paper style={{ width: "auto", height: "auto", padding: '1rem', margin: '1rem', marginLeft: "5rem", marginRight: "2rem" }}>
+      <Paper style={{ width: "auto", height: "auto", padding: '1rem', margin: '1rem', marginLeft: "3vw"}}>
         <Box id = 'wrapper' display="flex" alignItems="strectch">
           <Box id = 'image'
             display="flex" 
@@ -280,30 +280,29 @@ const ProductDetail = () => {
 
 
         <Carousel
-      navButtonsAlwaysVisible
-      navButtonsProps={{ 
-        style: { 
-          backgroundColor: 'transparent', 
-          borderRadius: 0,
-          color: 'black',
-          marginRight: '5rem',
-          marginLeft: '10px'
-        } 
-      }}
-      NextIcon={<ArrowForwardIosIcon />}
-      PrevIcon={<ArrowBackIosIcon />}
-      interval={5000}
-      animation="slide"
-      fullHeightHover={false}
-    >
-      {groupedProducts.map((group, index) => (
-        <Box key={index} display="flex" justifyContent="center">
-          {group.map((item) => (
-            <Item key={item.id} item={item} />
-          ))}
-        </Box>
+  navButtonsAlwaysVisible
+  navButtonsProps={{ 
+    style: { 
+      backgroundColor: 'transparent', 
+      borderRadius: 0,
+      color: 'black',
+    } 
+  }}
+  NextIcon={<img src={ArrowNext} alt="Next" />}
+  PrevIcon={<></>} // No prev button
+  interval={5000}
+  animation="slide"
+  fullHeightHover={false}
+>
+  {groupedProducts.map((group, index) => (
+    <Box key={index} display="flex" justifyContent="center">
+      {group.map((item) => (
+        <Item key={item.id} item={item} />
       ))}
-    </Carousel>
+    </Box>
+  ))}
+</Carousel>
+
       </Box>
 </>
   );
