@@ -34,16 +34,6 @@ export const Navbar = () => {
       }}
     >
       <Toolbar>
-<<<<<<< HEAD
-        <Box sx={{ display: "flex", justifyContent: "space-between", flexGrow: 1 }}>
-
-        <Link to='/home'>
-              <Typography variant="body1">Home</Typography>
-            </Link>
-
-          <Link to='/favorites'>
-              <Typography variant="body1">Favorites</Typography>
-=======
         <Box
           sx={{
             display: "flex",
@@ -68,7 +58,6 @@ export const Navbar = () => {
               >
                 OWLMART
               </Typography>
->>>>>>> feature/35Anya
             </Link>
           </Box>
 
@@ -113,13 +102,6 @@ export const Navbar = () => {
             />
           </Box>
 
-<<<<<<< HEAD
-            <Link to='/cart'>
-              <Typography variant="body1">Cart</Typography>
-            </Link>
-
-
-=======
           <Box
             sx={{
               display: "flex",
@@ -166,7 +148,6 @@ export const Navbar = () => {
               Log In
             </Button>
           </Box>
->>>>>>> feature/35Anya
         </Box>
       </Toolbar>
     </AppBar>

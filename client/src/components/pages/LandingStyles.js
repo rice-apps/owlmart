@@ -10,7 +10,7 @@ export const CenteredBox = styled(Box)`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 80vh;
+  min-height: 80vh;
   width: 100vw;
 
   @media (max-width: ${iphoneMaxWidth}) {

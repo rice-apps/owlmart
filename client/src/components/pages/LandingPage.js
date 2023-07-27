@@ -58,7 +58,7 @@ export const LandingPage = () => {
             </Typography>
           </Button>
         </DescriptionBox>
-        <TitleBox style={{ marginTop: "10vh" }}>
+        <TitleBox style={{ marginTop: "5vh" }}>
           <Typography
             variant="h1"
             sx={{
@@ -81,7 +81,7 @@ export const LandingPage = () => {
             color: "black",
             marginTop: "1vh",
             fontFamily: "Lato-bold",
-            fontSize: "24px",
+            fontSize: "2rem", //2xroot size 
             fontStyle: "normal",
             fontWeight: "700",
             lineHeight: "normal",
