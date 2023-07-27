@@ -22,11 +22,11 @@ export const TitleBox = styled(Box)`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 10vh;
+  min-height: 10vh;
   width: 50vw;
   font-family: "Lato-bold";
   color: black;
-  font-size: 2rem;
+  font-size: 2.5rem;
 
   @media (max-width: ${iphoneMaxWidth}) {
     font-size: 1.5rem; /* Adjust the font-size for iPhone */
@@ -40,12 +40,12 @@ export const DescriptionBox = styled(Box)`
   flex-direction: column;
   background-color: #9eb8d7;
   color: black;
-  height: 47vh;
+  min-height: 40vh;
   width: 88vw;
   border-radius: 30px;
   font-family: Libre Baskerville;
   text-align: center;
-  font-size: 24px;
+  font-size: 1.5rem; 
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -61,11 +61,10 @@ export const StyledButton = styled(Button)`
   align-items: center;
   color: black;
   font-family: "Lato-bold";
-  font-size: 24px;
+  font-size: 2rem;
   background-color: white;
   border-radius: 15px;
-  padding: 10px;
-  width: 10vw;
+  width: 50%;
 
   @media (max-width: ${iphoneMaxWidth}) {
     font-size: 18px; /* Adjust the font-size for iPhone */
