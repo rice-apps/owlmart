@@ -3,6 +3,7 @@ import { HomePage } from './components/pages/HomePage.js';
 import { Cart } from './components/pages/Cart.js';
 import { Favorites } from './components/pages/Favorites.js';
 import { LandingPage } from './components/pages/LandingPage';
+import ProductDetail from './components/pages/ProductDetail.js';
 
 
 const App = () => {
@@ -17,6 +18,8 @@ const App = () => {
 			</Route>
 			<Route path="/home" exact element = {<HomePage/>}>
 			</Route>
+
+			<Route path="/product/:id" element={<ProductDetail />} />
 			
 		</Routes>
 	</Router>

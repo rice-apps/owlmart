@@ -51,7 +51,6 @@ export const Navbar = () => {
           >
             <Link to="/home" style={{ textDecoration: "none" }}>
               <Typography
-                variant="h1"
                 sx={{
                   fontSize: "2rem",
                   fontFamily: "Lato-bold",

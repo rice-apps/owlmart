@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import {
   Card,
   CardContent,
@@ -16,26 +17,18 @@ import {
   FormControlLabel,
 } from '@mui/material';
 
-import { Navbar } from "./navbar";
+import { Navbar } from "./Navbar";
 
 import Button from '@mui/material/Button';
-import Owl from './owl.png';
-import test from './test.png';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 import favoritesIcon from "../../assets/favorites-icon.svg";
 
-const listingsData = [
-  { id: 1, title: 'Item Name', seller: "aaron", description: "very good", price: '$100.00', image: Owl, pickup: 'on-campus', category: 'insert tags'},
-  { id: 2, title: 'Item saf 2', seller: 'dsf', description: "worth an investment", price: '$50.50', image: test, pickup: 'off-campus', category: 'insert tags' },
-  { id: 3, title: 'dsfa 2', seller: 'sdf', description: "worth an investment", price: '$50.50', image: test, pickup: 'off-campus', category: 'insert tags' },
-  { id: 4, title: 'bdfb Name 2', seller: 'John sdf', description: "worth an investment", price: '$50.50', image: test, pickup: 'off-campus', category: 'insert tags' },
-  { id: 5, title: '3242 Name 2', seller: 'dfsdfsd sdf', description: "worth an investment", price: '$50.50', image: test, pickup: 'off-campus', category: 'insert tags' },
-  { id: 6, title: '543 2', seller: 'dfgfd Doe', description: "worth an investment", price: '$50.50', image: test, pickup: 'off-campus', category: 'insert tags' },
-];
+import listingsData from './AllProducts.js';
 
-const CardComponent = ({ image, title, price, seller }) => {
+const CardComponent = ({ id, image, title, price, seller }) => {
   return (
+    <Link to={`/product/${id}`} style={{ textDecoration: 'none' }}>
     <Card sx={{
       backgroundColor: "transparent",
       maxWidth: 300,
@@ -55,6 +48,7 @@ const CardComponent = ({ image, title, price, seller }) => {
             fontFamily: "Lato-regular",
             fontSize: "1.7rem",
             marginBottom: '0.5rem',
+            color: "#141517",
           }}>
             {title}
           </Typography>
@@ -63,6 +57,7 @@ const CardComponent = ({ image, title, price, seller }) => {
             fontFamily: "Lato-bold",
             fontSize: "1.3rem",
             marginBottom: '0.5rem',
+            color: "#141517",
           }}>
             Price: {price}
           </Typography>
@@ -70,6 +65,7 @@ const CardComponent = ({ image, title, price, seller }) => {
           <Typography sx={{
             fontFamily: "Libre-regular",
             fontSize: "1rem",
+            color: "#141517",
           }}>
             {seller}
           </Typography>
@@ -96,6 +92,7 @@ const CardComponent = ({ image, title, price, seller }) => {
         </Box>
       </CardActionArea>
     </Card>
+    </Link>
   );
 };
 
@@ -303,6 +300,7 @@ const Products = () => {
         {listingsData.map((listing) => (
           <Grid item key={listing.id} xs={12} sm={6} md={4} lg={4}>
             <CardComponent
+              id={listing.id}
               title={listing.title}
               price={listing.price}
               image={listing.image}
@@ -315,10 +313,11 @@ const Products = () => {
   );
 };
 
+
 const Filters = () => {
   return (
     <Box sx={{ backgroundColor: "transparent", height: "100vh", width: "20vw", marginLeft: '5vw', marginRight: "2vw", color: "#2E4561"}}>
-      <Typography sx={{ fontFamily: "Lato-Bold", fontSize: "3rem" }}>
+      <Typography sx={{ fontFamily: "Lato-Bold", fontSize: "3rem" , marginBottom: "7vh",}}>
         Items
       </Typography>
       <Typography sx={{ fontFamily: "Lato-regular", fontSize: "1.4rem", marginBottom: '0.5rem', marginTop: '1rem' }}>
@@ -344,3 +343,5 @@ export const HomePage = () => {
     </>
   );
 };
+
+export default HomePage;
