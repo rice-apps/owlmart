@@ -4,7 +4,7 @@ const {Listing} = require('../../models/Listing');
 
 module.exports = {
   Mutation: {
-    createDog: async (_, { title, description, price, active=true, pictures, pickup, category }, context) => {
+    createListing: async (_, { title, description, price, active, pictures, pickup, category }, context) => {
       
         // Check for empty strings
       if (title.trim() === '') {
@@ -21,9 +21,7 @@ module.exports = {
         throw new Error("Price is not in a valid format, don't forget the $!");
       }
 
-      const newListing = new Listing({
-        title, description, price, active, pictures, pickup, category
-      });
+      const newListing = new Listing({ title, description, price, active, pictures, pickup, category, });
 
       const listing = await newListing.save();
 

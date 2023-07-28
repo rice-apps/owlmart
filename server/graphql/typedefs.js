@@ -5,6 +5,16 @@ module.exports = gql`
     id: ID!
     name: String!
   }
+  type Listing {
+    id: ID!
+    title: String!
+    description: String!
+    price: String!
+    active: Boolean!
+    pictures: [ID]
+    pickup: Boolean!
+    category: String
+  }
   type Query {
     getDogs: [Dog]
     getDog(dogId: ID!): Dog
@@ -12,6 +22,6 @@ module.exports = gql`
   type Mutation {
     createDog(name: String!): Dog!
     deleteDog(dogId: ID!): String!
-    createListing(title: String!, description: String!, price: String!, active: Boolean!, pictures: [Image], pickup: Boolean!, category: String): Listing!
+    createListing(title: String!, description: String!, price: String!, active: Boolean!, pictures: [ID], pickup: Boolean!, category: String): Listing!
   }
 `;
