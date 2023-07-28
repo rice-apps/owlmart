@@ -1,6 +1,6 @@
 const { AuthenticationError } = require('apollo-server');
 
-const {Listing} = require('../../models/Listing');
+const Listing = require('../../models/Listing');
 
 module.exports = {
   Mutation: {
