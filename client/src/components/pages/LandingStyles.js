@@ -49,6 +49,7 @@ export const DescriptionBox = styled(Box)`
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  padding: 20px; 
 
   @media (max-width: ${iphoneMaxWidth}) {
     height: 35vh; /* Adjust the height for iPhone */
