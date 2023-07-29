@@ -46,7 +46,7 @@ export const LandingPage = () => {
               variant="h1"
               sx={{
                 fontSize: "24px",
-                fontFamily: "Lato",
+                fontFamily: "Lato-bold",
                 color: "black",
                 fontStyle: "normal",
                 fontWeight: "20px",

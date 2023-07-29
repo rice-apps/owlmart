@@ -49,7 +49,7 @@ export const DescriptionBox = styled(Box)`
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  padding: 20px; 
+  padding: 25px; 
 
   @media (max-width: ${iphoneMaxWidth}) {
     height: 35vh; /* Adjust the height for iPhone */
@@ -66,6 +66,7 @@ export const StyledButton = styled(Button)`
   background-color: white;
   border-radius: 15px;
   width: 50%;
+  margin-top: 20px;
 
   @media (max-width: ${iphoneMaxWidth}) {
     font-size: 18px; /* Adjust the font-size for iPhone */
