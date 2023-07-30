@@ -67,7 +67,7 @@ export const StyledButton = styled(Button)`
   border-radius: 15px;
   width: 50%;
   margin-top: 20px;
-
+ 
   @media (max-width: ${iphoneMaxWidth}) {
     font-size: 18px; /* Adjust the font-size for iPhone */
     width: 50vw; /* Adjust the width for iPhone */

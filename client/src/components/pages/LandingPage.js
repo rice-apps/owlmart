@@ -53,7 +53,7 @@ export const LandingPage = () => {
             <Typography
               variant="h1"
               sx={{
-                fontSize: "24px",
+                fontSize: "1.5rem",
                 fontFamily: "Lato-bold",
                 color: "black",
                 fontStyle: "normal",
@@ -89,7 +89,7 @@ export const LandingPage = () => {
             color: "black",
             marginTop: "1vh",
             fontFamily: "Lato-bold",
-            fontSize: "2rem", //2xroot size 
+            fontSize: "1.5rem", 
             fontStyle: "normal",
             fontWeight: "700",
             lineHeight: "normal",
