@@ -28,10 +28,17 @@ export const LandingPage = () => {
               OWLMART
             </Typography>
           </TitleBox>
-          Owl Mart is a web application designed to facilitate buying and
-          selling among Rice University students. It resembles a shopping app
-          and allows students to sell various products such as furniture,
-          clothing, accessories, etc.
+          <Typography
+            vairant="body1"
+            sx={{
+              fontFamily: "Libre Baskerville",
+            }}
+          >
+            Owl Mart is a web application designed to facilitate buying and
+            selling among Rice University students. It resembles a shopping app
+            and allows students to sell various products such as furniture,
+            clothing, accessories, etc.
+          </Typography>
           <Button
             variant="contained"
             style={{
