@@ -95,6 +95,8 @@ export const LandingPage = () => {
             lineHeight: "normal",
             textTransform: "none",
           }}
+          component={Link}
+            to="/Signup"
         >
           Sign Up
         </Button>

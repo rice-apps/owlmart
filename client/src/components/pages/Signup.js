@@ -1,8 +1,10 @@
+import { Navbar } from "./navbar";
 
-export const Signup = () => {
-	return(
-		<>
-			<h1>This is the Sign Up Page</h1> 
-		</>
-	);
-}
+export const SignupPage = () => {
+  return (
+    <>
+      <Navbar />
+      <h1>This is the Signup page</h1>
+    </>
+  );
+};
