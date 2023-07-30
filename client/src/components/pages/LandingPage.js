@@ -29,9 +29,10 @@ export const LandingPage = () => {
             </Typography>
           </TitleBox>
           <Typography
-            vairant="body1"
+            variant="body1"
             sx={{
               fontFamily: "Libre Baskerville",
+              fontSize: "23px",
             }}
           >
             Owl Mart is a web application designed to facilitate buying and
