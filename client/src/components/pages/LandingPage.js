@@ -32,7 +32,7 @@ export const LandingPage = () => {
             variant="body1"
             sx={{
               fontFamily: "Libre Baskerville-regular",
-              fontSize: "23px",
+              fontSize: "23px",  
             }}
           >
             Owl Mart is a web application designed to facilitate buying and
@@ -45,7 +45,7 @@ export const LandingPage = () => {
             style={{
               backgroundColor: "white",
               borderRadius: "15px",
-              marginTop: "10vh",
+              marginTop: "5vh",
             }}
             component={Link}
             to="/home"
