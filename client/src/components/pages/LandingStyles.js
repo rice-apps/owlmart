@@ -14,7 +14,8 @@ export const CenteredBox = styled(Box)`
   width: 100vw;
 
   @media (max-width: ${iphoneMaxWidth}) {
-    height: 60vh; /* Adjust the height for iPhone */
+    height: 80vh; /* Adjust the height for iPhone */
+    padding: 10px;
   }
 `;
 
@@ -53,7 +54,7 @@ export const DescriptionBox = styled(Box)`
   padding: 25px; 
 
   @media (max-width: ${iphoneMaxWidth}) {
-    height: 35vh; /* Adjust the height for iPhone */
+    height: 50vh; /* Adjust the height for iPhone */
     min-height: 45vh;
   }
 `;
@@ -73,5 +74,6 @@ export const StyledButton = styled(Button)`
   @media (max-width: ${iphoneMaxWidth}) {
     font-size: 10px; /* Adjust the font-size for iPhone */
     width: 50vw; /* Adjust the width for iPhone */
+    
   }
 `;
