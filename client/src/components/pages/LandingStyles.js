@@ -53,6 +53,7 @@ export const DescriptionBox = styled(Box)`
 
   @media (max-width: ${iphoneMaxWidth}) {
     height: 35vh; /* Adjust the height for iPhone */
+    min-height: 40vh;
   }
 `;
 
