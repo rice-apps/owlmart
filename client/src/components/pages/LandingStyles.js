@@ -27,6 +27,7 @@ export const TitleBox = styled(Box)`
   font-family: "Lato-bold";
   color: black;
   font-size: 2.5rem;
+  margin-bottom: 15px;
 
   @media (max-width: ${iphoneMaxWidth}) {
     font-size: 1.5rem; /* Adjust the font-size for iPhone */
@@ -53,7 +54,7 @@ export const DescriptionBox = styled(Box)`
 
   @media (max-width: ${iphoneMaxWidth}) {
     height: 35vh; /* Adjust the height for iPhone */
-    min-height: 45vh;goi
+    min-height: 45vh;
   }
 `;
 
@@ -70,7 +71,7 @@ export const StyledButton = styled(Button)`
   margin-top: 20px;
  
   @media (max-width: ${iphoneMaxWidth}) {
-    font-size: 18px; /* Adjust the font-size for iPhone */
+    font-size: 10px; /* Adjust the font-size for iPhone */
     width: 50vw; /* Adjust the width for iPhone */
   }
 `;
