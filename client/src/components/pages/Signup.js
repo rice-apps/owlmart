@@ -1,6 +1,6 @@
 import { Navbar } from "./navbar";
 
-export const SignupPage = () => {
+export const Signup = () => {
   return (
     <>
       <Navbar />

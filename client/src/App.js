@@ -3,7 +3,7 @@ import { HomePage } from './components/pages/HomePage';
 import { Cart } from './components/pages/Cart';
 import { Favorites } from './components/pages/Favorites';
 import { LandingPage } from './components/pages/LandingPage';
-
+import { Signup } from './components/pages/Signup';
 
 const App = () => {
   return (
@@ -17,7 +17,7 @@ const App = () => {
 			</Route>
 			<Route path="/home" exact element = {<HomePage/>}>
 			</Route>
-			
+			<Route path="/Signup" element = {<Signup/>} /> 
 		</Routes>
 	</Router>
   );
