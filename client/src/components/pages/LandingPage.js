@@ -31,7 +31,7 @@ export const LandingPage = () => {
           <Typography
             variant="body1"
             sx={{
-              fontFamily: "Libre Baskerville",
+              fontFamily: "Libre Baskerville-regular",
               fontSize: "23px",
             }}
           >
