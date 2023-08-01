@@ -21,7 +21,7 @@ import Button from '@mui/material/Button';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 import favoritesIcon from "../../assets/favorites-icon.svg";
-import { Navbar, navbar } from "./Navbar";
+import { Navbar } from "./Navbar";
 
 import listingsData from './AllProducts.js';
 
