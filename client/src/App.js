@@ -12,8 +12,6 @@ const App = () => {
 		<Routes>
 			<Route path="/" exact element = {<LandingPage/>}>
 			</Route>
-			<Route path="/cart" exact element = {<Cart/>}>
-			</Route>
         	<Route path="/favorites" exact element = {<Favorites/>}>
 			</Route>
 			<Route path="/home" exact element = {<HomePage/>}>
