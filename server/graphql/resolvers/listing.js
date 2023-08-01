@@ -3,6 +3,31 @@ const { AuthenticationError } = require('apollo-server');
 const Listing = require('../../models/Listing');
 
 module.exports = {
+  Query: {
+    getListings: async () => {
+      try {
+        const listings = await Listing.find();
+        return listings;
+      } catch (err) {
+        throw new Error(err);
+      }
+    },
+
+    getListing: async (_, {listingId}) => {
+      try {
+        const listing = await Listing.findById(listingId);
+        if (listing) {
+          return listing;
+        } else {
+          throw new Error('Listing not found');
+        }
+      } catch (err) {
+        throw new Error(err);
+      }
+    },
+  },
+
+
   Mutation: {
     createListing: async (_, { title, description, price, active, pictures, pickup, category }, context) => {
       
