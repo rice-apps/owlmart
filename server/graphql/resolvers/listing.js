@@ -59,6 +59,7 @@ module.exports = {
     createListing: async (_, { title, description, price, active, pictures, pickup, category }, context) => {
       
       // Check for empty strings
+      // Check for empty strings
       if (title.trim() === '') {
         throw new Error('Title must not b empty');
       }
@@ -115,5 +116,6 @@ module.exports = {
         throw new Error(err);
       }
     }
+  }
   }
 }
