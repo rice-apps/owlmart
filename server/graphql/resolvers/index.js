@@ -1,6 +1,6 @@
 const dogsResolvers = require('./dogs');
 const listingResolvers = require('./listing');
-
+const userResolvers = require('./user')
 module.exports = {
   Query: {
     ...dogsResolvers.Query,
@@ -8,5 +8,6 @@ module.exports = {
   Mutation: {
     ...dogsResolvers.Mutation,
     ...listingResolvers.Mutation,
+    ...userResolvers.Mutation,
   },
 };
