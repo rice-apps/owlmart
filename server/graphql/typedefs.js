@@ -14,6 +14,15 @@ module.exports = gql`
     pictures: [ID]
     pickup: Boolean!
     category: String
+  type Listing {
+    id: ID!
+    title: String!
+    description: String!
+    price: String!
+    active: Boolean!
+    pictures: [ID]
+    pickup: Boolean!
+    category: String
   }
   type User {
     id: ID!
