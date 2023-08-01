@@ -14,6 +14,7 @@ module.exports = gql`
     pictures: [ID]
     pickup: Boolean!
     category: String
+  }
   type User {
     id: ID!
     netID: String!
