@@ -13,7 +13,7 @@ module.exports = {
       }
     },
 
-    getListing: async (_, {listingId}) => {
+    getListingById: async (_, {listingId}) => {
       try {
         const listing = await Listing.findById(listingId);
         if (listing) {
