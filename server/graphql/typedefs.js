@@ -30,6 +30,8 @@ module.exports = gql`
     getDogs: [Dog]
     getDog(dogId: ID!): Dog
     getListings: [Listing]
+    getUsers: [User]
+    getUser(userId: ID!): User
   }
   type Mutation {
     createDog(name: String!): Dog!
