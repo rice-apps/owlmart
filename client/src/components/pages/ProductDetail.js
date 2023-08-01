@@ -127,6 +127,7 @@ const ProductDetail = () => {
         width: '17rem',
         height: '22rem',
         border: '2px solid black',
+        objectFit: 'cover',
       }}
     />
 
