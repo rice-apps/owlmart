@@ -3,10 +3,10 @@ import {
   Box,
 } from '@mui/material';
 
-import Filters from "../FiltersSection";
-import Products from "../ProductsGrid";
+import Filters from "../FiltersSectionComponent";
+import Products from "../ProductsGridComponent";
 
-import Navbar from '../Navbar.js';
+import Navbar from '../NavbarComponent.js';
 
 export const HomePage = () => {
   return (
