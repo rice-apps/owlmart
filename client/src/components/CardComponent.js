@@ -12,7 +12,8 @@ import {
 
 import Button from '@mui/material/Button';
 
-import favoritesIcon from "./assets/favorites-icon.svg";
+import favoritesIcon from "../assets/favorites-icon.svg";
+
 
 const CardComponent = ({ id, image, title, price, seller }) => {
   return (
