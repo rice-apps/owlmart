@@ -7,6 +7,7 @@ import { Signup } from './components/pages/Signup.js'import { Signup } from './c
 import ProductDetail from './components/pages/ProductDetail.js';
 
 
+
 const App = () => {
   return (
 	<Router>
