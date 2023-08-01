@@ -14,6 +14,7 @@ module.exports = gql`
     pictures: [ID]
     pickup: Boolean!
     category: String
+  }
   type User {
     id: ID!
     netID: String!
@@ -28,6 +29,7 @@ module.exports = gql`
   type Query {
     getDogs: [Dog]
     getDog(dogId: ID!): Dog
+    getListings: [Listing]
   }
   type Mutation {
     createDog(name: String!): Dog!
