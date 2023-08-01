@@ -35,6 +35,16 @@ Mutation: {
             
         return user;
     },
+    deleteUser: async (_, { userId }, context) => {
+
+      try {
+        const deletedUser = await User.findOneAndDelete({ _id: userId });
+        if (deletedUser) return 'User deleted Sucessfully';
+        else throw new Error('User does not exist');
+      } catch (err) {
+        throw new Error(err);
+      }
+    },
   },
 };
 
