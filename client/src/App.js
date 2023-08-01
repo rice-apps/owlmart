@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HomePage } from './components/pages/HomePage.js';
-import { Favorites } from './components/pages/Favorites.js';
+import { Favorites } from './components/pages/FavoritesPage.js';
 import { LandingPage } from './components/pages/LandingPage';
 import ProductDetail from './components/pages/ProductDetail.js';
 
