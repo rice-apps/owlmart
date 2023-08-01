@@ -57,6 +57,20 @@ function isValid_Currency(str) {
     }
 }
 
+// Checks if str is in a valid US currency format
+function isValid_Currency(str) {
+    // regex to check valid US currency
+    let regex = new RegExp(/^\$(\d{1, 3}(\, \d{3})*|(\d+))(\.\d{2})?$/);
+
+    // returns true if the str matched the ReGex
+    if (regex.test(str) == true) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
 <<<<<<< HEAD
 // Checks if str is in a valid US currency format
 function isValid_Currency(str) {
@@ -103,6 +117,7 @@ module.exports = {
   Mutation: {
     createListing: async (_, { title, description, price, active, pictures, pickup, category }, context) => {
       
+      // Check for empty strings
       // Check for empty strings
       // Check for empty strings
       if (title.trim() === '') {
