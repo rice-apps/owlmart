@@ -3,8 +3,7 @@ import { HomePage } from './components/pages/HomePage.js';
 import { Cart } from './components/pages/Cart.js';
 import { Favorites } from './components/pages/Favorites.js';
 import { LandingPage } from './components/pages/LandingPage';
-import { Signup } from './components/pages/Signup';
-import ProductDetail from './components/pages/ProductDetail.js';
+
 
 
 const App = () => {

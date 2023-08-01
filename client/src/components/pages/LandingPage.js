@@ -5,7 +5,6 @@ import {
   CenteredBox,
   DescriptionBox,
   TitleBox,
-  StyledButton,
 } from "./LandingStyles";
 export const LandingPage = () => {
   return (
