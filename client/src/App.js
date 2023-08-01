@@ -7,6 +7,7 @@ import { Signup } from './components/pages/Signup.js'import { Signup } from './c
 import ProductDetail from './components/pages/ProductDetail.js';
 
 
+import { Signup } from './components/pages/Signup.js'
 
 const App = () => {
   return (
@@ -20,10 +21,9 @@ const App = () => {
 			</Route>
 			<Route path="/home" exact element = {<HomePage/>}>
 			</Route>
+			<Route path="/product/:id" element={<ProductDetail />} />
 			<Route path="/Signup" exact element = {<Signup />}>
 			</Route>
-			
-			<Route path="/Signup" element = {<Signup/>} /> 
 		</Routes>
 	</Router>
   );
