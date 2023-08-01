@@ -4,8 +4,8 @@ import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Carousel from 'react-material-ui-carousel';
 
-import { Navbar } from './Navbar.js';
-import Products from './AllProducts.js';
+import Navbar from '../Navbar.js';
+import Products from '../AllProducts.js';
 
 import ArrowNext from "../../assets/next-arrow.svg";
 import favoritesIcon from "../../assets/favorites-icon.svg";
