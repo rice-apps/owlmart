@@ -15,6 +15,7 @@ function isValid_Currency(str) {
     }
 }
 
+<<<<<<< HEAD
 // Checks if str is in a valid US currency format
 function isValid_Currency(str) {
     // regex to check valid US currency
@@ -29,6 +30,8 @@ function isValid_Currency(str) {
     }
 }
 
+=======
+>>>>>>> 4dc5374 (added listing mutation updates)
 module.exports = {
   Query: {
     async getListings() {
@@ -59,7 +62,10 @@ module.exports = {
     createListing: async (_, { title, description, price, active, pictures, pickup, category }, context) => {
       
       // Check for empty strings
+<<<<<<< HEAD
       // Check for empty strings
+=======
+>>>>>>> 4dc5374 (added listing mutation updates)
       if (title.trim() === '') {
         throw new Error('Title must not b empty');
       }
@@ -117,5 +123,9 @@ module.exports = {
       }
     }
   }
+<<<<<<< HEAD
   }
 
+=======
+}
+>>>>>>> 4dc5374 (added listing mutation updates)
