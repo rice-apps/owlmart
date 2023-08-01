@@ -8,7 +8,7 @@ module.exports = {
       
         // Check for empty strings
       if (title.trim() === '') {
-        throw new Error('Title must not b empty');
+        throw new Error('Title must not be empty');
       }
       if (description.trim() === '') {
         throw new Error('Description must not be empty');
