@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button, Typography } from "@mui/material";
-import { Navbar } from "./navbar";
+import { Navbar } from "./Navbar";
 import {
   CenteredBox,
   DescriptionBox,

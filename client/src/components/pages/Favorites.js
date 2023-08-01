@@ -21,7 +21,7 @@ import Button from '@mui/material/Button';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 import favoritesIcon from "../../assets/favorites-icon.svg";
-import { Navbar } from "./Navbar";
+import { Navbar, navbar } from "./Navbar";
 
 import listingsData from './AllProducts.js';
 
@@ -333,7 +333,7 @@ const Filters = () => {
 export const Favorites = () => {
   return (
     <>
-		<Navbar />
+		<Navbar/>
       <Box display="flex" justifyContent="space-between">
         <Filters />
         <Products />
