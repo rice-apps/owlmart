@@ -2,8 +2,8 @@ import Owl from './owl.png';
 import test from './test.png';
 
 const listingsData = [
-    { id: 1, title: 'Wonderful Item', seller: 'Anya', description: 'Top-notch quality', price: '$20.00', image: test, pickup: 'On Campus', category: 'insert tags'},
-    { id: 2, title: 'Fantastic Good', seller: 'Anya', description: 'Worth every penny', price: '$35.50', image: Owl, pickup: 'Off Campus', category: 'insert tags' },
+    { id: 1, title: 'Wonderful Item', seller: 'Anya', description: 'Top-notch quality', price: '$20.00', image: "https://img.buzzfeed.com/buzzfeed-static/static/2017-10/31/13/asset/buzzfeed-prod-fastlane-01/sub-buzz-20342-1509470849-7.jpg?crop=600%3A900%3B0%2C0&downsize=300:*&output-format=auto&output-quality=auto", pickup: 'On Campus', category: 'insert tags'},
+    { id: 2, title: 'Fantastic Good', seller: 'Anya', description: 'Worth every penny', price: '$35.50', image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqORus3Fnu7SPQIVsONI8i5_C02zJmxOfldg&usqp=CAU", pickup: 'Off Campus', category: 'insert tags' },
     { id: 3, title: 'Amazing Product', seller: 'Anya', description: 'A real bargain', price: '$60.50', image: Owl, pickup: 'On Campus', category: 'insert tags' },
     { id: 4, title: 'Incredible Commodity', seller: 'Anya', description: 'An absolute must-have', price: '$75.00', image: test, pickup: 'Off Campus', category: 'insert tags' },
     { id: 5, title: 'Superb Thing', seller: 'Anya', description: 'Simply the best on the market', price: '$45.30', image: Owl, pickup: 'On Campus', category: 'insert tags' },

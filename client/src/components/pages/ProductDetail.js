@@ -42,7 +42,7 @@ const Item = ({ item }) => {
               style={{
                 width: '170px',
                 height: '210px',
-                objectFit: 'cover',
+                objectFit: 'contain',
               }}
             />
           </Box>
