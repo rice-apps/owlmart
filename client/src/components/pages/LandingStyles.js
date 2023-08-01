@@ -4,7 +4,7 @@ import { Button } from "@mui/material";
 
 const iphoneMaxWidth = "768px"; // Set the maximum width for iPhone (adjust if needed)
 const desktopMinWidth = "769px"; // Set the minimum width for desktop (adjust if needed)
-const iphoneMaxWidth = "1080px"; // 768px - Set the maximum width for iPhone (adjust if needed)
+const iphoneMaxWidth = "1080px";
 
 export const CenteredBox = styled(Box)`
   display: flex;
