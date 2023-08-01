@@ -15,6 +15,7 @@ module.exports = gql`
     pickup: Boolean!
     category: String
   }
+  }
   type Listing {
     id: ID!
     title: String!
