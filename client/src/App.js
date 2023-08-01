@@ -3,7 +3,7 @@ import { HomePage } from './components/pages/HomePage.js';
 import { Cart } from './components/pages/Cart.js';
 import { Favorites } from './components/pages/Favorites.js';
 import { LandingPage } from './components/pages/LandingPage';
-import { Signup } from './components/pages/Signup.js'
+import { Signup } from './components/pages/Signup.js'import { Signup } from './components/pages/Signup';
 
 const App = () => {
   return (
@@ -20,6 +20,7 @@ const App = () => {
 			<Route path="/Signup" exact element = {<Signup />}>
 			</Route>
 			
+			<Route path="/Signup" element = {<Signup/>} /> 
 		</Routes>
 	</Router>
   );
