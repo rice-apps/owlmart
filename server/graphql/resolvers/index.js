@@ -6,7 +6,6 @@ module.exports = {
   Query: {
     ...dogsResolvers.Query,
     ...listingResolvers.Query,
-    ...listingResolvers.Query,
     ...userResolvers.Query,
   },
   Mutation: {
