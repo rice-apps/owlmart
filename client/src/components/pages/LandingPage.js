@@ -80,7 +80,7 @@ export const LandingPage = () => {
             color: "black",
             marginTop: "1vh",
             fontFamily: "Lato-bold",
-            fontSize: "2rem", //2xroot size 
+            fontSize: "24px", 
             fontStyle: "normal",
             fontWeight: "700",
             lineHeight: "normal",
