@@ -76,11 +76,6 @@ module.exports = {
     createListing: async (_, { title, description, price, active, pictures, pickup, category }, context) => {
       
       // Check for empty strings
-      // Check for empty strings
-<<<<<<< HEAD
-      // Check for empty strings
-=======
->>>>>>> 4dc5374 (added listing mutation updates)
       if (title.trim() === '') {
         throw new Error('Title must not b empty');
       }
