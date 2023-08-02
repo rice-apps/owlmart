@@ -8,10 +8,10 @@ import Products from "../ProductsGridComponent";
 
 import Navbar from '../NavbarComponent.js';
 
-export const HomePage = () => {
+export const Favorites = () => {
   return (
     <>
-      <Navbar />
+		<Navbar />
       <Box display="flex" justifyContent="space-between">
         <Filters />
         <Products />
@@ -19,5 +19,3 @@ export const HomePage = () => {
     </>
   );
 };
-
-export default HomePage;
