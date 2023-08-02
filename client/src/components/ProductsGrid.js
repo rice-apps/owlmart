@@ -5,7 +5,7 @@ import {
   } from '@mui/material';
 
 import CardComponent from "./ProductsCard";
-import listingsData from "./ProductsGrid";
+import listingsData from "./AllProducts";
 
 const ProductsGrid = () => {
     return (
