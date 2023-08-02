@@ -30,7 +30,7 @@ module.exports = gql`
     getDogs: [Dog]
     getDog(dogId: ID!): Dog
     getListings: [Listing]
-    getListings: [Listing]
+    getListing(listingId: ID!): Listing
     getUsers: [User]
     getUser(userId: ID!): User
   }
