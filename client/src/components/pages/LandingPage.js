@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button, Typography } from "@mui/material";
-import { Navbar } from "./Navbar"; 
+import { Navbar } from "./Navbar";
 import {
   CenteredBox,
   DescriptionBox,
@@ -45,7 +45,7 @@ export const LandingPage = () => {
               variant="h1"
               sx={{
                 fontSize: "24px",
-                fontFamily: "Lato",
+                fontFamily: "Lato-bold",
                 color: "black",
                 fontStyle: "normal",
                 fontWeight: "20px",
@@ -61,7 +61,7 @@ export const LandingPage = () => {
           <Typography
             variant="h1"
             sx={{
-              fontSize: "36px",
+              fontSize: "24px",
               fontFamily: "Lato-bold",
               color: "#2E4561",
               fontStyle: "normal",

@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import Box from "@mui/material/Box";
-
 const iphoneMaxWidth = "768px"; // Set the maximum width for iPhone (adjust if needed)
 
 export const CenteredBox = styled(Box)`
