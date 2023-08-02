@@ -39,8 +39,8 @@ export const Navbar = () => {
         sx={{
           "@media only screen and (max-width: 600px)": {
             flexDirection: "column", // Stack elements vertically on smaller screens
-            alignItems: "center", // Center elements vertically
-            marginBottom: "0.5rem",}// Add margin between navigation items>
+            alignItems: "center",
+            m:2 }// Center elements vertically
           }}
       >
         <Box

@@ -295,7 +295,13 @@ const PickupAccordion = () => {
 
 const Products = () => {
   return (
-    <Box display="flex" flexDirection="column" width="65vw" marginRight="2vw" marginTop="10vh" backgroundColor="transparent">
+    <Box display="flex" flexDirection="column" width="65vw" marginRight="2vw" marginTop="10vh" backgroundColor="transparent"
+    sx={{
+      "@media only screen and (max-width: 600px)": {
+        marginLeft: 5,
+    }
+  }}
+      >
       <Grid container spacing={1}>
         {listingsData.map((listing) => (
           <Grid item key={listing.id} xs={12} sm={6} md={4} lg={4}>
@@ -316,7 +322,17 @@ const Products = () => {
 
 const Filters = () => {
   return (
-    <Box sx={{ backgroundColor: "transparent", height: "100vh", width: "20vw", marginLeft: '5vw', marginRight: "2vw", color: "#2E4561"}}>
+    <Box 
+      sx={{ 
+        backgroundColor: "transparent", 
+        height: "100vh", 
+        width: "20vw",
+         marginLeft: '5vw', marginRight: "2vw", color: "#2E4561",
+         
+         "@media only screen and (max-width:600px)":{
+          marginLeft:5
+         }
+         }}>
       <Typography sx={{ fontFamily: "Lato-Bold", fontSize: "3rem" , marginBottom: "7vh",}}>
         Items
       </Typography>
