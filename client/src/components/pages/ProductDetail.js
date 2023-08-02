@@ -16,7 +16,7 @@ const groupByEveryN = (array, n) => {
   return result;
 };
 
-Const ProductDetail = () => {
+const ProductDetail = () => {
   const { id } = useParams();
   const product = Products.find((product) => product.id === parseInt(id));
 
