@@ -3,10 +3,10 @@ import {
   Box,
 } from '@mui/material';
 
-import Filters from "../FiltersSectionComponent";
-import Products from "../ProductsGridComponent";
+import Filters from "../Filters";
+import Products from "../ProductsGrid";
 
-import Navbar from '../NavbarComponent.js';
+import Navbar from '../Navbar.js';
 
 export const Favorites = () => {
   return (
