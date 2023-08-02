@@ -1,9 +1,11 @@
 const dogsResolvers = require('./dogs');
 const listingResolvers = require('./listing');
-const userResolvers = require('./user')
+const userResolvers = require('./user');
+
 module.exports = {
   Query: {
     ...dogsResolvers.Query,
+    ...userResolvers.Query,
   },
   Mutation: {
     ...dogsResolvers.Mutation,
