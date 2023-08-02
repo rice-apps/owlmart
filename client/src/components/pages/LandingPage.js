@@ -1,7 +1,9 @@
+import { Link } from 'react-router-dom';
+import { Button } from '@mui/material';
 import owl from './owl.png'
 import './Landing.css';
 
-function App() {
+export const LandingPage = () => {
   return (
     <div className="App">
       <header className="App-header">
@@ -9,9 +11,12 @@ function App() {
         <p>
           Welcome to Owlmart!!
         </p>
+		<Link to='/home'>
+			<Button variant="contained" color="success">
+				Home
+			</Button>
+		</Link>
       </header>
     </div>
   );
 }
-
-export default App;
