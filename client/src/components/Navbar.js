@@ -42,6 +42,7 @@ const Navbar = () => {
             alignItems: "center",
             justifyContent: "space-between",
             width: "100vw",
+
           }}
         >
           <Box
