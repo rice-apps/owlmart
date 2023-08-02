@@ -1,6 +1,5 @@
 import Owl from './owl.png';
 import test from './test.png';
-const desc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 const listingsData = [
     { id: 1, title: 'Wonderful Item', seller: 'Anya', description: 'Top-notch quality', price: '$20.00', image: test, pickup: 'On Campus', category: 'insert tags'},
     { id: 2, title: 'Fantastic Good', seller: 'Anya', description: 'Worth every penny', price: '$35.50', image: Owl, pickup: 'Off Campus', category: 'insert tags' },
