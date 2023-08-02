@@ -140,9 +140,4 @@ module.exports = {
     }
   }
 }
-<<<<<<< HEAD
-  }
-
-=======
 }
->>>>>>> 4dc5374 (added listing mutation updates)
