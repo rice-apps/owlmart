@@ -71,10 +71,12 @@ export const LandingPage = () => {
               OWLMART
             </Typography>
           </Box>
+          <Box sx = {{paddingLeft: "10rem", paddingRight: "10rem", marginTop: "2rem", fontFamily: "Libre Baskerville-regular"}}>
           Owl Mart is a web application designed to facilitate buying and
           selling among Rice University students. It resembles a shopping app
           and allows students to sell various products such as furniture,
           clothing, accessories, etc.
+          </Box>
           <Button
             variant="contained"
             component={Link}
@@ -139,7 +141,7 @@ export const LandingPage = () => {
             borderRadius: "15px",
             color: "black",
             marginTop: "1vh",
-            fontFamily: "Lato-bold",
+            fontFamily: "Lato-regular",
             fontSize: "24px",
             fontStyle: "normal",
             fontWeight: "700",
