@@ -1,12 +1,10 @@
-import React from 'react';
-import {
-  Box,
-} from '@mui/material';
+import React from "react";
+import { Box } from "@mui/material";
 
 import Filters from "../Filters";
 import Products from "../ProductsGrid";
 
-import Navbar from '../Navbar.js';
+import Navbar from "../Navbar.js";
 
 export const HomePage = () => {
   return (
