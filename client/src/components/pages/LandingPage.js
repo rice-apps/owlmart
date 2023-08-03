@@ -147,6 +147,7 @@ export const LandingPage = () => {
             fontWeight: "700",
             lineHeight: "normal",
             textTransform: "none",
+            width: "12rem",
           }}
         >
           Sign Up
