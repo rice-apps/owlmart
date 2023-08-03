@@ -32,7 +32,7 @@ export const LandingPage = () => {
             height: "47vh",
             width: "88vw",
             borderRadius: "30px",
-            fontFamily: "Libre Baskerville",
+            fontFamily: "Libre Baskerville-regular",
             textAlign: "center",
             fontSize: "24px",
             fontStyle: "normal",
@@ -81,16 +81,18 @@ export const LandingPage = () => {
             component={Link}
             to="/home"
             sx={{
+              width: "12rem",
               backgroundColor: "white",
               borderRadius: "15px",
               marginTop: "10vh",
             }}
           >
             <Typography
-              variant="h1"
+
               sx={{
+                width: "12rem",
                 fontSize: "24px",
-                fontFamily: "Lato",
+                fontFamily: "Lato-regular",
                 color: "black",
                 fontStyle: "normal",
                 fontWeight: "20px",
