@@ -14,11 +14,11 @@ import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
 import SearchIcon from "@mui/icons-material/Search";
 
-import favoritesIcon from "../../assets/favorites-icon.svg";
-import messageIcon from "../../assets/message-icon.svg";
-import addIcon from "../../assets/add-icon.svg";
+import favoritesIcon from "../assets/favorites-icon.svg";
+import messageIcon from "../assets/message-icon.svg";
+import addIcon from "../assets/add-icon.svg";
 
-export const Navbar = () => {
+const Navbar = () => {
   const [searchValue, setSearchValue] = useState("");
 
   const handleSearchChange = (event) => {
@@ -167,3 +167,4 @@ export const Navbar = () => {
 };
 
 
+export default Navbar;

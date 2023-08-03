@@ -6,16 +6,14 @@ import Products from "../ProductsGrid";
 
 import Navbar from "../Navbar.js";
 
-export const HomePage = () => {
+export const Favorites = () => {
   return (
     <>
       <Navbar />
       <Box display="flex" justifyContent="space-between">
-        <Filters />
+        <Filters page={"Favorites"}></Filters>
         <Products />
       </Box>
     </>
   );
 };
-
-export default HomePage;
