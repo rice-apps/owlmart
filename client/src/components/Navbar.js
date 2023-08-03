@@ -35,13 +35,21 @@ const Navbar = () => {
         marginBottom: "3vh"
       }}
     >
-      <Toolbar>
+      <Toolbar
+        sx={{
+          "@media only screen and (max-width: 600px)": {
+            flexDirection: "column", // Stack elements vertically on smaller screens
+            alignItems: "center",
+            m:2 }// Center elements vertically
+          }}
+      >
         <Box
           sx={{
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
             width: "100vw",
+            flexShrink: 1,
           }}
         >
           <Box
