@@ -49,7 +49,6 @@ const Navbar = () => {
             alignItems: "center",
             justifyContent: "space-between",
             width: "100vw",
-            flexShrink: 1,
           }}
         >
           <Box
