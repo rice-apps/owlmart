@@ -12,6 +12,7 @@ const ProductsGrid = () => {
       <Box sx={{display:"flex", flexDirection:"column", width:"65vw", marginRight:"2vw", marginTop:"10vh", backgroundColor:"transparent",
       "@media only screen and (max-width:600px)":{
         marginLeft:5,
+        marginRight:-10
       }
       }}>
         <Grid container spacing={1}>
