@@ -6,7 +6,7 @@ const iphoneMaxWidth = "768px";
 
 export const LandingPage = () => {
   return (
-    <div className="App">
+    <>
       <Navbar />
       <Box
         sx={{
@@ -153,6 +153,6 @@ export const LandingPage = () => {
           Sign Up
         </Button>
       </Box>
-    </div>
+    </>
   );
 };
