@@ -59,7 +59,6 @@ export const LandingPage = () => {
             }}
           >
             <Typography
-              variant="h1"
               sx={{
                 fontSize: "36px",
                 fontFamily: "Lato-bold",
@@ -121,7 +120,6 @@ export const LandingPage = () => {
           }}
         >
           <Typography
-            variant="h1"
             sx={{
               fontSize: "36px",
               fontFamily: "Lato-bold",
